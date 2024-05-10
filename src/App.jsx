@@ -5,6 +5,7 @@ import "./App.css";
 import DoctorRegistration from './assets/Pages/DoctorRegistration';
 import PatientRegistration from './assets/Pages/PatientRegistration';
 import Login from './assets/Pages/Login';
+import Home from './assets/Pages/Home';
 
 const App = () => {
   return (
@@ -14,6 +15,7 @@ const App = () => {
     <Route path='/Login' element={ <Login /> }/>
     <Route path='/PatientRegistration' element={ <PatientRegistration /> }/>
     <Route path='/DoctorRegistration' element={ <DoctorRegistration /> }/>
+    <Route path='/' element={<Home/>}/>
     
     </Routes>
     </BrowserRouter>
