@@ -9,10 +9,12 @@ function AboutUs(props) {
         <div>
         <h2>{props.heading}</h2>
         <p>{props.paragraph}</p>
+        <a href="">{props.button}</a>
         </div>
       <image>
       <img src={props.image} alt="nurse" />
       </image>
+      
     </div>
   )
 }
