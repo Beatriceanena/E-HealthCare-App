@@ -6,8 +6,10 @@ import './AboutUs.css'
 function AboutUs(props) {
   return (
     <div className='about'>
-      <h2>{props.heading}</h2>
-      <p>{props.paragraph}</p>
+        <div>
+        <h2>{props.heading}</h2>
+        <p>{props.paragraph}</p>
+        </div>
       <image>
       <img src={props.image} alt="nurse" />
       </image>
