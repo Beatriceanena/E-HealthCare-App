@@ -1,18 +1,19 @@
 import React from 'react'
 import Header from '../Components/Header'
 import AboutUs from '../Components/AboutUs'
-
+import Footer from '../Components/Footer'
 
 
 function Home() {
   return (
     <div>
+    
     <Header/>
     <AboutUs
       heading= "E-Health Care"
       paragraph= "Empowering and saving human lives from the non-communicable diseases through providing accessible and affordable Healthcare to patients."
       image= "\src\assets\Images\Nurse.jpg" 
-      button = {"Make appointment" }
+      button = "Make appointment"
       
       />
     <AboutUs
@@ -23,6 +24,8 @@ function Home() {
 
       button = "Read More"
       />
+
+      <Footer/>
     </div>
   )
 }

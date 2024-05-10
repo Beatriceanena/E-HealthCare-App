@@ -1,0 +1,25 @@
+.about {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+.text {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+    width: 50%;
+}
+
+
+
+image {
+    display: flex;
+    height: 25rem;
+
+}
+
+img {
+    height: 50%;
+}
