@@ -8,9 +8,9 @@ function Header() {
     <div className="top">
         <h1 style={{color:'#089CAD', marginLeft:'25px'}}>E-Health</h1>
             <div className="account">
-                <a href="#login" style={{color:'black', textDecoration:'none', borderRight:'1px solid black'}}>Login</a>
-                <a href="#account" style={{color:'black', textDecoration:'none'}}>Create Account</a>
-                <button style={{height:'40px', justifyContent:'center', alignItems:'center', backgroundColor:'#089CAD'}}>Book Appointment</button>
+                <a href="login" style={{color:'black', textDecoration:'none', borderRight:'1px solid black'}}>Login</a>
+                <a href="account" style={{color:'black', textDecoration:'none'}}>Create Account</a>
+                <button style={{height:'40px', justifyContent:'center', alignItems:'center', backgroundColor:'#089CAD', width:'120px'}}>Book Appointment</button>
             </div>
             </div>
         <nav>
