@@ -41,6 +41,19 @@ function Home() {
       <Services/>
       <Services/>
 
+      <h3>Our Services</h3>
+      <Services
+      title='Remote Doctor Consultations'/>
+      <Services
+      title= 'Health Screening'/>
+      <Services 
+      title= 'Padriatic & nutrition Consultations'/>
+      <Services
+      title= 'Monthly HealthCare Plans'/>
+      <Services
+      title='Ambulence Service'/>
+      <Services
+      title='Physical checkups'/>
       <Footer/>
     </div>
   )
