@@ -1,6 +1,6 @@
 .about {
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
     align-items: center;
 
 }
@@ -9,17 +9,26 @@
     justify-content: space-around;
     align-items: center;
     flex-direction: column;
-    width: 50%;
+    width: 500px;
+    height: auto;
+    border: 1px solid black ;
+    margin: 5px;
 }
 
 
 
 image {
     display: flex;
-    height: 25rem;
-
+    height: 320px;
+    align-items: center;
+    justify-content: center;
+    width: 450px;
+    margin-top: 5px;
+    border: 1px solid;
 }
 
 img {
-    height: 50%;
+    width: 430px;
+    height: 300px;
+    border-radius: 3px;
 }
