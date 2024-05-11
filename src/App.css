@@ -99,3 +99,44 @@ width: 2rem;
 .login-form{
     width: 50%;
 }
+
+/* Bookappointment CSS*/
+
+.appointment-form{
+    border: 1px solid #089CAD ;
+    width: 40%;
+    margin: 0 auto;
+    padding: 2.5rem;
+    border-radius: 5px;
+}
+.form-data{
+    display: flex;
+    gap: 1rem;
+}
+
+.form-data input{
+    width: 14rem;
+    margin: 0.6rem 0rem;
+}
+.heading2{
+    text-align: center;
+}
+#appointment-btn{
+width: 12rem;
+margin: 1rem 8rem;
+}
+#message{
+    width: 29rem;
+    height: 8rem;
+    margin-bottom: 1rem;
+}
+#time{
+    width: 29rem;
+}
+option{
+    padding: 0.1rem;
+}
+.error{
+    color: red;
+    margin:2rem 0rem;
+}
