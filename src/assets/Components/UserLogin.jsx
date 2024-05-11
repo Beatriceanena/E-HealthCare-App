@@ -92,7 +92,7 @@ const Login = () => {
           <p className='forgot-password'>Forgot Password</p>
           <br />
 
-          <button onSubmit={handleSubmit}>Login</button>
+          <button onSubmit={handleSubmit} id='button1'>Login</button>
 
           <div id='button'>
             <div>

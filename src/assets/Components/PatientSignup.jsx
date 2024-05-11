@@ -106,7 +106,7 @@ const PatientSignup = () => {
 
           <p className='forgot-password'>Forgot Password?</p>
           <br />
-          <button onSubmit={handleSubmit}>SignUp</button>
+          <button onSubmit={handleSubmit} id='button1'>SignUp</button>
 
           <div className='item'>
             <h4>Already have an Account?</h4>

@@ -119,7 +119,7 @@ const DoctorSignup = () => {
         </div>
         <p className='forgot-password'>Forgot Password?</p>
           <br />
-          <button>SignUp</button>
+          <button id='button1'>SignUp</button>
 
           <div className='item'>
           <h4>Already have an Account?</h4>
