@@ -14,32 +14,48 @@ const DoctorSignup = () => {
      let [speciality, setSpeciality] = useState('')
      let [password,setPassword]=useState('')
      let [confirmpassword, setConfirmpassword]=useState('')
-     let[errors,setErrors]=useState('')
+     let [errors, setErrors] = useState('');
+    
 
- 
      function handleChange(event, stateUpdater) {
          let inputValue = event.target.value;
          stateUpdater(inputValue)
      }
 
-     function validateValues(inputValue){
-      let errors = {};
-      if (inputValues.email.length < 15) {
-        errors.email = "Email is too short";
+    function validateValues() {
+      const errors = {};
+      if (!username.trim()) {
+          errors.username = 'Username is required';
       }
-      if (inputValues.password.length < 5) {
-        errors.password = "Password is too short";
+      if (!email.trim()) {
+          errors.email = 'Email is required';
+      } else if (!/\S+@\S+\.\S+/.test(email)) {
+          errors.email = 'Email is invalid';
       }
-      if (!inputValues.age || inputValues.age < 18) {
-        errors.age = "Minimum age is 18";
+      if (!speciality.trim()) {
+        errors.speciality = 'Speciality is required';
+    }
+      if (!password) {
+          errors.password = 'Password is required';
+      } else if (password.length < 8) {
+          errors.password = 'Password must be at least 8 characters long';
       }
+      if (!confirmpassword) {
+        errors.confirmpassword = 'confirmpassword is required';
+    } else if (password!==confirmpassword) {
+        errors.confirmpassword = 'Password does not much';
+    }
+     
       return errors;
-     }
+  }
 
-     function handleSubmit(e) {
-      e.preventDefault();
-      setErrors(validateValues(inputValue));
-      isSubmitted(true);
+   function handleSubmit(e) {
+    e.preventDefault();
+    const validationErrors = validateValues();
+    setErrors(validationErrors);
+    if (Object.keys(validationErrors).length === 0) {
+        setIsSubmitted(true);
+    }
     }
 
   return (
@@ -62,7 +78,8 @@ const DoctorSignup = () => {
             <br />
             <input id='name' type='text' value={username} onChange={function (event) {
               handleChange(event, setUsername);
-            }}></input>
+            }}/>
+            {errors.username && <span className='error'>{errors.username}</span>}
           </div>
 
           <div>
@@ -70,15 +87,17 @@ const DoctorSignup = () => {
             <br />
             <input id='email' type='email' value={email} onChange={function (event) {
               handleChange(event, setEmail)
-
-            }}></input>
+            }}/>
+            {errors.email && <span className='error'>{errors.email}</span>}
           </div>
+
           <div>
           <label htmlFor='speciality'>Speciality</label>
           <br />
           <input id='speciality' type='text' value={speciality} onChange={function (event) {
             handleChange(event, setSpeciality)
-          }}></input>
+          }}/>
+          {errors.speciality && <span className='error'>{errors.speciality}</span>}
         </div>
 
           <div>
@@ -86,7 +105,8 @@ const DoctorSignup = () => {
             <br />
             <input id='password' type='password' value={password} onChange={function (event) {
               handleChange(event, setPassword)
-            }}></input>
+            }}/>
+            {errors.password && <span className='error'>{errors.password}</span>}
           </div>
 
           <div>
@@ -94,11 +114,12 @@ const DoctorSignup = () => {
           <br />
           <input id='confirmpassword' type='password' value={confirmpassword} onChange={function (event) {
             handleChange(event, setConfirmpassword)
-          }}></input>
+          }}/>
+          {errors.confirmpassword && <span className='error'>{errors.confirmpassword}</span>}
         </div>
         <p className='forgot-password'>Forgot Password?</p>
           <br />
-          <button>SignUp</button>
+          <button id='button1'>SignUp</button>
 
           <div className='item'>
           <h4>Already have an Account?</h4>

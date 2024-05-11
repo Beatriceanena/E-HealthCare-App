@@ -35,14 +35,18 @@ input,select{
     border-radius: 5px;
     background-color: #fff;
 }
-button{
+
+#button1{
     width: 26rem;
-    margin: -3rem 0rem;
+    margin: -1.2rem 0rem;
     padding: 1rem 0rem;
     background-color: #005365;
     color: #fff;
     border: none;
     border-radius: 5px;
+    justify-content: center;
+    align-items: center;
+    font-size: 18px;
 }
 .items{
     display:flex;
@@ -98,4 +102,51 @@ width: 2rem;
 }
 .login-form{
     width: 50%;
+}
+
+/* Bookappointment CSS*/
+
+.appointment-form{
+    border: 1px solid #089CAD ;
+    width: 40%;
+    margin: 0 auto;
+    padding: 2.5rem;
+    border-radius: 5px;
+}
+.form-data{
+    display: flex;
+    gap: 1rem;
+}
+
+.form-data input{
+    width: 14rem;
+    margin: 0.6rem 0rem;
+}
+.heading2{
+    text-align: center;
+}
+#appointment-btn{
+width: 15rem;
+background-color: #005365;
+margin:0 auto;
+padding: 1rem 2.5rem;
+text-align: center;
+justify-content: center;
+border: none;
+font-size: 15px;
+}
+#message{
+    width: 29rem;
+    height: 8rem;
+    margin-bottom: 1.5rem;
+}
+#time{
+    width: 29rem;
+}
+option{
+    padding: 0.1rem;
+}
+.error{
+    color: red;
+    margin:2rem 0rem;
 }
