@@ -1,0 +1,47 @@
+
+.top{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    height: 70px;
+}
+
+.account {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    margin-right: 25px;
+   
+}
+
+
+nav {
+    display: flex;
+    background-color: #024250;
+    height: 45px;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+
+}
+
+
+li, ul {
+    display: flex;
+    text-decoration: none;
+    gap: 5rem;
+    align-items: center;
+    color: white;
+}
+
+
+button {
+    display: flex;
+    background-color: #00224D;
+    color: white;
+    border-radius: 5px;
+    gap: 5px;
+}
+
