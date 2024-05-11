@@ -3,10 +3,11 @@ import Header from '../Components/Header'
 import AboutUs from '../Components/AboutUs'
 import Footer from '../Components/Footer'
 import Services from '../Components/Services'
+import './Home.css'
 
 function Home() {
   return (
-    <div>
+    <div className='HomePage'>
     
     <Header/>
     <AboutUs

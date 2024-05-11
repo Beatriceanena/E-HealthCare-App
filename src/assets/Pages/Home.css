@@ -1,0 +1,14 @@
+.HomePage {
+    display: block;
+    flex-direction: ;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+
+.OurServices {
+    display: flex;
+    align-items: center;
+   gap: 20px;
+}
