@@ -37,9 +37,10 @@ function Home() {
       />
 
       <h3>Our Specialities</h3>
-      <Services/>
-      <Services/>
-      <Services/>
+      <Services title = 'Diabates'/>
+      <Services title = 'Diabates'/>
+      <Services title = 'Diabates'/>
+  
 
       <h3>Our Services</h3>
       <Services
