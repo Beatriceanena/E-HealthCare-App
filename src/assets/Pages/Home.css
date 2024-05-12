@@ -1,6 +1,5 @@
 .HomePage {
     display: block;
-    flex-direction: ;
     justify-content: center;
     align-items: center;
     width: 100%;
@@ -10,5 +9,41 @@
 .OurServices {
     display: flex;
     align-items: center;
-   gap: 20px;
+    justify-content: center;
+    gap: 25px;
+    margin: 15px 0px 15px 0px;
+}
+
+.specialities {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.sections {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+
+}
+
+.Offer {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin: 20px 0px 15px 0px;
+    height: 500px;
+}
+
+.special {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    align-items: center;
+    height: 400px;
+    width: 650px;
+
 }

@@ -15,17 +15,18 @@ function Home() {
       paragraph= "Empowering and saving human lives from the non-communicable diseases through providing accessible and affordable Healthcare to patients."
       image= "\src\assets\Images\Nurse.jpg" 
       button = "Make appointment"
+      imageBeforeText = {true}
       />
 
       <div className="OurServices">
-      <Services
-      title = "Online consultancy" />
-      <Services
-      title ="Online Lab" />
-      <Services
-      title='Find a Doctor'/>
-      <Services
-      title= 'Online Phamarcy'/>
+        <Services
+        title = "Online consultancy" />
+        <Services
+        title ="Online Lab" />
+        <Services
+        title='Find a Doctor'/>
+        <Services
+        title= 'Online Phamarcy'/>
       </div>
    
 
@@ -35,27 +36,37 @@ function Home() {
       
       image = '\src\assets\Images\consult.jpg'
       button = "Read More"
+      imageBeforeText = {false}
       />
 
-      <h3>Our Specialities</h3>
-      <Services title = 'Diabates'/>
-      <Services title = 'Diabates'/>
-      <Services title = 'Diabates'/>
-  
-
-      <h3>Our Services</h3>
-      <Services
-      title='Remote Doctor Consultations'/>
-      <Services
-      title= 'Health Screening'/>
-      <Services 
-      title= 'Padriatic & nutrition Consultations'/>
-      <Services
-      title= 'Monthly HealthCare Plans'/>
-      <Services
-      title='Ambulence Service'/>
-      <Services
-      title='Physical checkups'/>
+      <div className="specialities">
+        <h3>Our Specialities</h3>
+          <div className="sections">
+            <Services title = 'Diabates'/>
+            <Services title = 'Cardiovascular Checkup'/>
+            <Services title = 'Blood Pressure'/>
+          </div>
+      </div>
+      
+  <div className="Offer">
+    <h3 style={{float:top}}>Our Services</h3>
+      <div className="special">
+        <Services
+          title='Remote Doctor Consultations'/>
+          <Services
+          title= 'Health Screening'/>
+          <Services 
+          title= 'Padriatic & nutrition Consultations'/>
+          <Services
+          title= 'Monthly HealthCare Plans'/>
+          <Services
+          title='Ambulance Service'/>
+          <Services
+          title='Physical checkups'/>
+      </div>
+       
+  </div>
+      
       <Footer/>
     </div>
   )
