@@ -2,22 +2,26 @@ import React from 'react'
 import './AboutUs.css'
 
 
-
+{/*for using the image in row-reverse too */}
 function AboutUs(props) {
-  return (
-    <div className='about'>
+const { heading, paragraph, button, image, imageBeforeText } = props;
 
+const flexDirectionStyle = {
+    flexDirection: imageBeforeText ? 'row' : 'row-reverse'};
+
+    return (
+      <div className='about' style={flexDirectionStyle}>
         <div className='text'>
-        <h2>{props.heading}</h2>
-        <p>{props.paragraph}</p>
-        <a href="">{props.button}</a>
+        <h2>{heading}</h2>
+        <p>{paragraph}</p>
+        <a href="">{button}</a>
         </div>
-      <image >
-      <img src={props.image} alt="Doctor" />
-      </image>
+      <div className='image'>
+      <img src={image} alt="Doctor" />
+      </div>
       
     </div>
-  )
+  );
 }
 
 export default AboutUs
