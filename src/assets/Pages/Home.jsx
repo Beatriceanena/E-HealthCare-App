@@ -49,7 +49,7 @@ function Home() {
       </div>
       
   <div className="Offer">
-    <h3 style={{float:top}}>Our Services</h3>
+    <h3>Our Services</h3>
       <div className="special">
         <Services
           title='Remote Doctor Consultations'/>
