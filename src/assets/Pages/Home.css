@@ -47,3 +47,16 @@
     width: 650px;
 
 }
+
+@media only screen and (max-width: 768px) {
+    .HomePage {
+      flex-direction: column;
+    }
+  }
+  
+  /* Media query for smaller devices like smartphones */
+  @media only screen and (max-width: 480px) {
+    .HomePage{
+        flex-direction: column;
+    }
+  }
