@@ -7,6 +7,8 @@ import Login from './assets/Pages/Login';
 import Home from './assets/Pages/Home';
 import Bookappointment from './assets/Pages/Bookappointment';
 import Pharmacy from './assets/Pages/Pharmacy'
+import Productdetails from './assets/Pages/Productdetails';
+import Shoppingcart from './assets/Pages/Shoppingcart';
 
 
 const App = () => {
@@ -20,6 +22,9 @@ const App = () => {
     <Route path='/DoctorRegistration' element={ <DoctorRegistration /> }/>
     <Route path='/Bookappointment' element={ <Bookappointment/> }/> 
     <Route path='/Pharmacy' element={ <Pharmacy/>}/> 
+    <Route path='/Productdetails' element={<Productdetails/>} />
+    <Route path='/Shoppingcart' element={<Shoppingcart/>} />
+    
   
     </Routes>
     </BrowserRouter>

@@ -276,12 +276,11 @@ border-top-left-radius: 8px;
     display: flex;
     margin: 1.5rem 2rem;
 }
-.product-image{
-    height: 8rem;
-}
+
 .product-image img{
     border:1px solid #089CAD;
-    width:26rem;
+    width:27rem;
+    height: 28rem;
     border-radius: 10px;
 }
 .product-description{
@@ -297,11 +296,19 @@ border-top-left-radius: 8px;
     margin-top: -1rem;
 }
 .detail p{
-    padding: 0.3rem 0.5rem;
+    padding: 0.2rem 0.5rem;
 }
 #cart-btn2{
     width: 8rem;
     padding: 1rem;
     border: none;
     background-color: #005365;
+    margin-top: 2rem;
+}
+
+.cart-items{
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    background-color: #D8EBEC;
 }
