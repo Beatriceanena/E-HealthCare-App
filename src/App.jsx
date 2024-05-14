@@ -6,6 +6,8 @@ import PatientRegistration from './assets/Pages/PatientRegistration';
 import Login from './assets/Pages/Login';
 import Home from './assets/Pages/Home';
 import Bookappointment from './assets/Pages/Bookappointment';
+import Pharmacy from './assets/Pages/Pharmacy'
+
 
 const App = () => {
   return (
@@ -16,7 +18,9 @@ const App = () => {
     <Route path='/Login' element={ <Login /> }/>
     <Route path='/PatientRegistration' element={ <PatientRegistration /> }/>
     <Route path='/DoctorRegistration' element={ <DoctorRegistration /> }/>
-    <Route path='/Bookappointment' element={ <Bookappointment/> }/>       
+    <Route path='/Bookappointment' element={ <Bookappointment/> }/> 
+    <Route path='/Pharmacy' element={ <Pharmacy/>}/> 
+  
     </Routes>
     </BrowserRouter>
     </div>
