@@ -13,6 +13,7 @@ const Product = () => {
           <p>UGX 200000</p> 
           <p>View</p>
           </div>
+          <div class="in-stock-banner">In Stock</div>
           <button id='cart-btn'>Add to Cart</button>
         </div>
       </div>

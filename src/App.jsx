@@ -8,7 +8,10 @@ import Home from './assets/Pages/Home';
 import Bookappointment from './assets/Pages/Bookappointment';
 import Pharmacy from './assets/Pages/Pharmacy'
 import Productdetails from './assets/Pages/Productdetails';
+import Finddoctor from './assets/Pages/Finddoctor';
 import Shoppingcart from './assets/Pages/Shoppingcart';
+import Doctorsdetails from './assets/Pages/Doctorsdetails';
+
 
 
 const App = () => {
@@ -23,7 +26,10 @@ const App = () => {
     <Route path='/Bookappointment' element={ <Bookappointment/> }/> 
     <Route path='/Pharmacy' element={ <Pharmacy/>}/> 
     <Route path='/Productdetails' element={<Productdetails/>} />
+    <Route path='/Finddoctor' element={<Finddoctor/>} />
     <Route path='/Shoppingcart' element={<Shoppingcart/>} />
+    <Route path='/Doctorsdetails' element={<Doctorsdetails/>} />
+
     
   
     </Routes>
