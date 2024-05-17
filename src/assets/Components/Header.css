@@ -51,3 +51,23 @@ border: 1px solid white;
 border-radius: 5px;
 box-shadow: whitesmoke;
 }
+
+@media only screen and (max-width: 768px) {
+    .account {
+      flex-direction: column;
+      width: 100%;
+    }
+
+    ul {
+        flex-direction: row;
+        
+    }
+  }
+  
+  /* Media query for smaller devices like smartphones */
+  @media only screen and (max-width: 480px) {
+    .HomePage{
+        flex-direction: column;
+        width: 100%;
+    }
+  }
