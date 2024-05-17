@@ -11,6 +11,7 @@ import Productdetails from './assets/Pages/Productdetails';
 import Finddoctor from './assets/Pages/Finddoctor';
 import Shoppingcart from './assets/Pages/Shoppingcart';
 import Doctorsdetails from './assets/Pages/Doctorsdetails';
+import ScheduleCall from './assets/Pages/ScheduleCall';
 
 
 
@@ -29,7 +30,7 @@ const App = () => {
     <Route path='/Finddoctor' element={<Finddoctor/>} />
     <Route path='/Shoppingcart' element={<Shoppingcart/>} />
     <Route path='/Doctorsdetails' element={<Doctorsdetails/>} />
-
+    <Route path='/ScheduleCall' element={<ScheduleCall/>} />
     
   
     </Routes>
