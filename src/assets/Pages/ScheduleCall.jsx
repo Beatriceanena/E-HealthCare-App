@@ -5,8 +5,9 @@ import React from 'react'
 function ScheduleCall() {
   return (
     <div>
-      <h1>Would you like to schedule a Call with a Doctor</h1>
+      <h1>Would you like to schedule a Call with a Doctor?</h1>
       <p>Dont worry, we have got you covered. With our 24hour services available. weare sure to get you in touch with an available Doctor in your time of need</p>
+      <img src="\src\assets\Images\doctor.jpeg" alt="Doctor" />
       <div className="Schedule">
       <select type="usertype" id="time">
             <option value="text">Available Slots</option>
@@ -15,6 +16,10 @@ function ScheduleCall() {
               <option value="time">10:30AM</option>
               <option value="time">11:00AM</option>
               <option value="time">11:30AM</option>
+              <option value="time">12:00AM</option>
+              <option value="time">12:30PM</option>
+              <option value="time">1:00PM</option>
+              <option value="time">2:30PM</option>
             </select>
             <select name="Location" id="Calltype">
             <option value="text">Location</option>
@@ -22,7 +27,7 @@ function ScheduleCall() {
             <option value="Google Meet">Google Meet</option>
             </select>
           
-            <button>Schedule Call</button>
+            <button onClick={{}}>Schedule Call</button>
       </div>
     </div>
   )
