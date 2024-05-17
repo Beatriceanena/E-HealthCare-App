@@ -1,0 +1,72 @@
+h1{ 
+  text-align: center;
+  color:teal;
+  
+}
+h2{ 
+  margin-left: 70px;
+  color: teal;
+  font-size: 30px;
+}
+#hr{
+  color: red;
+}
+
+#contact_us{
+  display: flex;
+    gap: 30%;
+    align-items: center;
+    width: 10%;
+    box-sizing: border-box;
+}
+img{
+  margin-left: 60px;
+  height: 490px;
+  width: 670px;
+}
+#image{
+
+  height: 490px;
+  padding: 40px;
+  border: 1px solid teal;
+box-sizing: border-box;
+margin-top: 17px;
+margin-bottom: 17px;
+}
+#footer{
+  background-color: teal;
+  width: auto;
+  height: 150px;
+}
+#input{
+  border: 1px solid teal;
+  border-radius: 8px;
+  height: 30px;
+  width: 400px;
+  padding: 15px;
+  box-shadow: inset;
+  font-size: larger;
+  
+  
+}
+#text{
+  border: 1px solid teal;
+  width: 400px;
+  height: 110px;
+  border-radius: 10px;
+  padding: 15px;
+  font-size: x-large;
+  font-style: normal;
+}
+button{
+  background-color: teal;
+  border-radius: 10px;
+  color: white;
+  border: none;
+  height: 50px;
+  width: 190px;
+  margin-left: 100px ;
+  margin-top: 30px;
+  cursor: pointer;
+  font-size: larger;
+}
