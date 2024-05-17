@@ -48,7 +48,7 @@ fetchData();
           
                     (doctors.map((item) => {
                         return (
-                            <Doctordetail
+                            <Doctor
                                 key={item.id}
                                 title={item.attributes.doctorname}
                                 image={`http://localhost:1337${item.attributes.image.data.attributes.url}`}
@@ -58,6 +58,8 @@ fetchData();
                     })) :
                     (
                         <p>Loading.....</p>
+
+                        
                     )
             }
             </div>

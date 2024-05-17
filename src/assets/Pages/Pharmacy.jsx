@@ -1,30 +1,40 @@
-import React from 'react'
-import { useEffect, useState } from 'react';
-import Product from '../Components/Product'
-import Pharmacyherosection from '../Components/Pharmacyherosection'
+import React, { useEffect, useState } from 'react';
+import Product from '../Components/Product';
+import Pharmacyherosection from '../Components/Pharmacyherosection';
 
 const Pharmacy = () => {
-    let [products, setProducts] = useState(null)
+    const [products, setProducts] = useState(null);
+    const [searchItem, setSearchItem] = useState('');
 
-    function fetchData() {
-        let apiUrl = "http://localhost:1337/api/products?populate=*"
+    const fetchData = () => {
+        const apiUrl = "http://localhost:1337/api/products?populate=*";
         fetch(apiUrl)
-            .then((response) => {
-                return response.json();
+            .then(response => response.json())
+            .then(dataObject => {
+                const productsData = dataObject.data;
+                setProducts(productsData);
             })
-            .then((dataObject) => {
-                let productsData = dataObject.data
-                setProducts(productsData)
-            })
-    }
+            .catch(error => {
+                console.error('Error fetching products:', error);
+                setProducts([]); 
+            });
+    };
 
     useEffect(() => {
         fetchData();
-    }, [])
+    }, []);
+
+    const handleSearch = (event) => {
+        setSearchItem(event.target.value);
+    };
+
+    const filteredProducts = products?.filter(product =>
+        product.attributes.productname.toLowerCase().includes(searchItem.toLowerCase())
+    ) || [];
 
     return (
         <div>
-            <Pharmacyherosection />
+            <Pharmacyherosection searchItem={searchItem} handleSearch={handleSearch} />
             <div className='cart-container'>
                 <div className='categories'>
                     <div className='category'>
@@ -34,7 +44,7 @@ const Pharmacy = () => {
                     </div>
                 </div>
                 <div className='image-banner'>
-                    <img src="https://uc.healthnetcalifornia.com/content/dam/centene/healthnet/images/groups/uc-tfc-hn-formulary-jul23-banner.png" />
+                    <img src="https://uc.healthnetcalifornia.com/content/dam/centene/healthnet/images/groups/uc-tfc-hn-formulary-jul23-banner.png" alt="Banner" />
                 </div>
             </div>
 
@@ -46,37 +56,23 @@ const Pharmacy = () => {
                 </div>
                 <div className='product-section'>
                     <div className='product-cart'>
-                        {
-                            products !== null ?
-
-                                (products.map((item) => {
-                                    return (
-                                        <Product
-                                            key={item.id}
-                                            title={item.attributes.productname}
-                                            image={`http://localhost:1337${item.attributes.image.data.attributes.url}`}
-                                            price={item.attributes.price}
-                                        />
-                                    )
-                                })) :
-                                (
-                                    <p>Loading.....</p>
-                                )
-                        }
-
+                        {filteredProducts.length > 0 ? (
+                            filteredProducts.map(item => (
+                                <Product
+                                    key={item.id}
+                                    title={item.attributes.productname}
+                                    image={`http://localhost:1337${item.attributes.image.data.attributes.url}`}
+                                    price={item.attributes.price}
+                                />
+                            ))
+                        ) : (
+                            <p>{products === null ? 'Loading.....' : 'No products found.'}</p>
+                        )}
                     </div>
-                    <div className='product-cart'>
-
-                    </div>
-
                 </div>
-
-
             </div>
-
-
         </div>
-    )
-}
+    );
+};
 
-export default Pharmacy
+export default Pharmacy;
