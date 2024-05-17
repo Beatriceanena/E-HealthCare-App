@@ -1,8 +1,28 @@
 import React from 'react'
+import { useState,useEffect } from 'react'
 import Doctor from '../Components/Doctor'
 
 
 const Finddoctor = () => {
+    let [doctors,setDoctors]= useState(null)
+
+ function fetchData(){
+    let apiUrl='http://localhost:1337/api/doctors?populate=*'
+    fetch(apiUrl)
+      .then((response) =>{
+        return response.json();
+      })
+      .then((dataObject)=> {
+        let doctorData=dataObject.data
+        setDoctors=(doctorData)
+      })
+    
+    }
+
+useEffect(() => {
+fetchData();
+ }, [])
+ 
     return (
         <div>
             <div className='hero-section'>
@@ -23,13 +43,23 @@ const Finddoctor = () => {
 
             </div>
             <div className='doctors-section'>
-                <Doctor />
-                <Doctor />
-                <Doctor />
-                <Doctor />
-                <Doctor />
-                <Doctor />
-             
+            {
+                doctors !== null ?
+          
+                    (doctors.map((item) => {
+                        return (
+                            <Doctordetail
+                                key={item.id}
+                                title={item.attributes.doctorname}
+                                image={`http://localhost:1337${item.attributes.image.data.attributes.url}`}
+                                speciality={props.speciality}
+                            />
+                        )
+                    })) :
+                    (
+                        <p>Loading.....</p>
+                    )
+            }
             </div>
 
             <div className='about-doctors'>

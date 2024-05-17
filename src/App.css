@@ -99,6 +99,7 @@ h2{
 }
 #google-icon{
 width: 2rem;
+height: 2rem;
 }
 .login-form{
     width: 50%;
@@ -308,12 +309,14 @@ border-top-left-radius: 8px;
 .detail p{
     padding: 0.2rem 0.5rem;
 }
-#cart-btn2{
-    width: 8rem;
-    padding: 1rem;
+#cart-btn2, #cart-btn3{
+    width: 12rem;
+    padding: 1.5rem;
     border: none;
     background-color: #005365;
-    margin-top: 2rem;
+    margin-top: 1.5rem;
+    font-size: 15px;
+    justify-content: center;
 }
 
 .cart-items{
@@ -368,15 +371,14 @@ border-top-left-radius: 8px;
 }
 .lists{
     width: 30rem;
-
     font-size: 1.2rem;
 }
 .lists h3{
     font-size: 2rem;
 }
 .about-doctors{
-    display: flex;
-    width: 100%;
+  display: flex;
+  width: 100%;
   justify-content: space-around;
   margin: 4rem 0.5rem;
 
@@ -392,3 +394,62 @@ border-top-left-radius: 8px;
     font-size: 15px;
     margin: 2.5rem 0rem;
     }
+    /*Doctors details page CSS*/
+    .main-details-container{
+      width:100%;
+      margin: 3rem 0rem;
+      background-color: #D8EBEC;
+      height: 26rem;
+     padding: 1.2rem 0rem;
+    }
+
+    .doctor-details-container{
+      display: flex;  
+      margin: 0rem 3rem;
+
+    }
+    .details-container{
+        border: 1px solid black;
+        width: 35rem;
+        height:21.5rem ;
+        margin: 1.9rem 1rem;
+        background-color: #fff;
+        border: 1px solid #089CAD;
+        border-radius: 5px;
+        padding: 1rem 0rem 0rem 3rem; 
+    }
+    .doctor-details-image{
+        width: 26rem;
+        height: 22rem;
+        border: 1px solid black;
+        margin:2rem;
+        border: 1px solid #089CAD;
+        border-radius: 5px;
+    }
+    .doctor-details-image img{
+        object-fit: cover;
+        width: 100%;
+        height: 100%;
+    }
+    .details-container{
+        font-size: 20px;
+    }
+  .details-container h4,.details-container p{
+     margin-top: -1rem;
+  }
+ #icons-2{
+    font-size: 28px;
+    color: #089CAD;
+    padding: 0.25rem;
+ }
+ .button{
+    display: flex;
+ }
+ #cart-btn3{
+    background-color: #089CAD;
+    margin-left: 1rem;
+ }
+
+ span{
+    margin-left: 0.5rem;
+ }

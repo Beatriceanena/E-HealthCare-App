@@ -7,7 +7,6 @@ const Productdetails = () => {
         <div>
             <Pharmacyherosection />
 
-
             <div className='product-details'>
                 <div className='product-image'>
                     <h3>Product Details</h3>
@@ -16,25 +15,20 @@ const Productdetails = () => {
 
 
                 <div className='product-description'>
-
-
                     <div className='detail'>
                         <h3>Drug Name:</h3>
                         <p>Paracetamol</p>
                     </div>
-
 
                     <div className='detail'>
                         <h3>Price:</h3>
                         <p>UGX 20000</p>
                     </div>
 
-
                     <div className='detail'>
                         <h3>Status:</h3>
                         <p>Instock</p>
                     </div>
-
 
                     <hr />
                     <h2>Description</h2>
