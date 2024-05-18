@@ -15,7 +15,7 @@ function Header() {
 
             <Link to="/PatientRegistration" style={{color:'black', textDecoration:'none'}}>Create Account</Link>
 
-            <Link to="/BookAppointment" style={{height:'40px', justifyContent:'center', alignItems:'center', backgroundColor:'#089CAD', width:'120px'}}>Book Appointment</Link>
+            <Link to="/BookAppointment" style={{height:'40px', justifyContent:'center', alignItems:'center', backgroundColor:'#089CAD', width:'120px', textAlign:'center', textDecoration:'none', borderRadius:'5px', color:'white'}}>Book Appointment</Link>
             </div>
             </div>
         <nav>
