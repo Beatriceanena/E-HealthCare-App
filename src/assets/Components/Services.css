@@ -8,3 +8,10 @@
     background-color: #079cad;
     color: white;
 }
+
+h4 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
