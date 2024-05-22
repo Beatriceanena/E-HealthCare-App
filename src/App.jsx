@@ -22,7 +22,7 @@ const App = () => {
     <div>
     <BrowserRouter>
     <Routes>
-    <Route path='/Home' element={<Home />} />
+    <Route path='/Home' element={ <Home /> }/>
     <Route path='/Login' element={ <Login /> }/>
     <Route path='/PatientRegistration' element={ <PatientRegistration /> }/>
     <Route path='/DoctorRegistration' element={ <DoctorRegistration /> }/>
@@ -36,7 +36,7 @@ const App = () => {
     <Route path='/Contactus' element={<Contactus />} />
     <Route path='/Profile' element={<Profile />} />
     <Route path='/Findadoctor' element={<Findadoctor />} />
-   
+  
     </Routes>
     </BrowserRouter>
     </div>
