@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom';
 import './AboutUs.css'
 
 
@@ -14,7 +15,7 @@ const flexDirectionStyle = {
         <div className='text'>
         <h2>{heading}</h2>
         <p>{paragraph}</p>
-        <a href="">{button}</a>
+        <a className='button' href="#Bookappointment" style={{borderRadius:5}}>{button}</a>
         </div>
       <div className='image'>
       <img src={image} alt="Doctor" />

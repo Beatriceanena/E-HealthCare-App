@@ -30,3 +30,20 @@ img {
     height: 300px;
     border-radius: 3px;
 }
+ 
+.button{
+    display: flex;
+    text-decoration: none;
+    border: 1px solid;
+    height: 30px;
+    width: 190px;
+    justify-content: center;
+    align-items: center;
+    background-color: #079cad;
+    color: white;
+}
+
+.button:hover{
+    padding: 5px;
+    box-shadow: #079cad;
+}
