@@ -12,6 +12,7 @@ import Finddoctor from './assets/Pages/Finddoctor';
 import Shoppingcart from './assets/Pages/Shoppingcart';
 import Doctorsdetails from './assets/Pages/Doctorsdetails';
 import ScheduleCall from './assets/Pages/ScheduleCall';
+import Resources from './assets/Pages/Resources';
 
 
 
@@ -31,6 +32,7 @@ const App = () => {
     <Route path='/Shoppingcart' element={<Shoppingcart/>} />
     <Route path='/Doctorsdetails' element={<Doctorsdetails/>} />
     <Route path='/ScheduleCall' element={<ScheduleCall/>} />
+    <Route path='/Resources' element={<Resources/>} />
     </Routes>
     </BrowserRouter>
     </div>
