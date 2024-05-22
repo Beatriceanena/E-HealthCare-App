@@ -21,7 +21,7 @@ function Header() {
         <nav>
         
            <ul>
-                        <li><Link to="/Home"  style={{color:'white', textDecoration:'none'}}>Home</Link> </li>
+                        <li><Link to="/"  style={{color:'white', textDecoration:'none'}}>Home</Link> </li>
                         <li><Link to="/Finddoctor" style={{color:'white', textDecoration:'none'}}>Find a  Doctor</Link></li>
                         <li><Link to="/Pharmacy" style={{color:'white', textDecoration:'none'}}>Pharmacy</Link></li>
                         <li><Link id='#footer' style={{color:'white', textDecoration:'none'}}>Contact us</Link></li>
