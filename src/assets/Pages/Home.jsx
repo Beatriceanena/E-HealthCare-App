@@ -20,13 +20,13 @@ function Home() {
 
       <div className="OurServices">
         <Services
-        title = "Online consultancy" />
+        title = "Online consultancy" link="/ScheduleCall" />
         <Services
-        title ="Online Lab" />
+        title ="Online Lab" link="/Pharmacy"/>
         <Services
-        title='Find a Doctor'/>
+        title='Find a Doctor' link="/Finddoctor"/>
         <Services
-        title= 'Online Phamarcy'/>
+        title= 'Online Pharmacy' link='/Pharmacy'/>
       </div>
    
 

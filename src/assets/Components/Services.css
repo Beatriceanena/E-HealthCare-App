@@ -7,6 +7,8 @@
     border-radius: 10px;
     background-color: #079cad;
     color: white;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 h4 {
@@ -14,4 +16,10 @@ h4 {
     justify-content: center;
     align-items: center;
     text-align: center;
+}
+
+.services:hover {
+    background-color: #056b75; /* Darker shade of the original color */
+    transform: scale(1.05); /* Slightly increase the size */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add shadow */
 }
