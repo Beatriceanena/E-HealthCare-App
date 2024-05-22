@@ -8,7 +8,7 @@ function Findadoctor() {
     const [medicalpersonels, setMedicalPersonels] = useState(null);
 
     const fetchData = () => {
-        const apiUrl = "http://localhost:1337/api/medicalpersonels?populate=*";
+        const apiUrl = "https://e-healthcare-strapi-backend-1.onrender.com/api/medicalpersonels?populate=*";
         fetch(apiUrl)
             .then(response => response.json())
             .then(dataObject => {
@@ -43,7 +43,7 @@ function Findadoctor() {
                             <Doctor
                                 key={item.id}
                                 name={item.attributes.doctorname}
-                                image={`http://localhost:1337${item.attributes.image.data.attributes.url}`}
+                                image={`https://e-healthcare-strapi-backend-1.onrender.com${item.attributes.image.data.attributes.url}`}
                                 speciality={item.attributes.speciality}
                             />
                         ))) :

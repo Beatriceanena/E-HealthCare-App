@@ -12,7 +12,7 @@ const Productdetails = () => {
     const [product, setProduct] = useState(null);
 
     const fetchData = () => {
-        const apiUrl = `http://localhost:1337/api/products/${id}?populate=*`;
+        const apiUrl = `https://e-healthcare-strapi-backend-1.onrender.com/api/products/${id}?populate=*`;
         fetch(apiUrl)
             .then(response => response.json())
             .then(dataObject => {
@@ -40,7 +40,7 @@ const Productdetails = () => {
                         <Productdetail
                           key={product.id}
                           title={product.attributes.productname}
-                          image={`http://localhost:1337${product.attributes.image.data.attributes.url}`}
+                          image={`https://e-healthcare-strapi-backend-1.onrender.com${product.attributes.image.data.attributes.url}`}
                           price={product.attributes.price}
                           description={product.attributes.description}
                           status={product.attributes.status}
@@ -52,8 +52,6 @@ const Productdetails = () => {
     
                         )
                 }
-
-
             </div>
             <Footer />
          </div>

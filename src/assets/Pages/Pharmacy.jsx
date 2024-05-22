@@ -9,7 +9,7 @@ const Pharmacy = () => {
     const [searchItem, setSearchItem] = useState('');
 
     const fetchData = () => {
-        const apiUrl = "http://localhost:1337/api/products?populate=*";
+        const apiUrl = "https://e-healthcare-strapi-backend-1.onrender.com/api/products?populate=*";
         fetch(apiUrl)
             .then(response => response.json())
             .then(dataObject => {
@@ -65,7 +65,7 @@ const Pharmacy = () => {
                                     key={item.id}
                                     id={item.id}
                                     title={item.attributes.productname}
-                                    image={`http://localhost:1337${item.attributes.image.data.attributes.url}`}
+                                    image={`https://e-healthcare-strapi-backend-1.onrender.com${item.attributes.image.data.attributes.url}`}
                                     price={item.attributes.price}
                                     status={item.attributes.status}
                                 />

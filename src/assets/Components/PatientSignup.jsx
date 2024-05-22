@@ -17,7 +17,7 @@ const PatientSignup = () => {
   };
 
   const createPatient = () => {
-    const apiUrl = 'http://localhost:1337/api/patients';
+    const apiUrl = 'https://e-healthcare-strapi-backend-1.onrender.com/api/patients';
     const requestObject = {
       method: 'POST',
       body: JSON.stringify({
