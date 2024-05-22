@@ -1,9 +1,12 @@
 import React from 'react'
 import Pharmacyherosection from '../Components/Pharmacyherosection'
+import Navbar from '../Components/Navbar'
+import Footer from '../Components/Footer'
 
 const Shoppingcart = () => {
     return (
         <div>
+            <Navbar />
             <Pharmacyherosection />
 
             <div>
@@ -27,6 +30,7 @@ const Shoppingcart = () => {
                     </div>
                 </div>
             </div>
+            <Footer />
         </div>
     )
 }

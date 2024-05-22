@@ -1,73 +1,136 @@
 import React from 'react'
-import Header from '../Components/Header'
-import AboutUs from '../Components/AboutUs'
+import Navbar from '../Components/Navbar'
+import Cards from '../Components/Cards'
+import Specialities from '../Components/Specialities'
+import Service from '../Components/Service'
 import Footer from '../Components/Footer'
-import Services from '../Components/Services'
-import './Home.css'
+import { Link } from 'react-router-dom'
 
-function Home() {
+const Home=() => {
   return (
-    <div className='HomePage'>
-    
-    <Header/>
-    <AboutUs
-      heading= "E-Health Care"
-      paragraph= "Empowering and saving human lives from the non-communicable diseases through providing accessible and affordable Healthcare to patients."
-      image= "\src\assets\Images\Nurse.jpg" 
-      button = "Make appointment"
-      imageBeforeText = {true}
-      />
+    <div className='home'>
+      <Navbar />
 
-      <div className="OurServices">
-        <Services
-        title = "Online consultancy" />
-        <Services
-        title ="Online Lab" />
-        <Services
-        title='Find a Doctor'/>
-        <Services
-        title= 'Online Phamarcy'/>
-      </div>
-   
+      <div className='hero-section' >
+        <div className='hero-details'>
+          <h1>E-HealthCare</h1>
+          <p>Empowering and saving human lives
+            from the non communicable diseases
+            through providing accessible and
+            affordable Healthcare to patients</p>
 
-    <AboutUs
-      heading= "About Us"
-      paragraph= "Welcome to E-Health, your comprehensive digital health platform designed to revolutionize the way you manage your well-being. At E-Health, we believe in leveraging cutting-edge technology to provide accessible, convenient, and personalized healthcare solutions tailored to your unique needs. Whether you're seeking medical advice, monitoring and managing a chronic condition, our platform offers a wide range of services, including telemedicine consultations, health tracking tools, virtual consultation and much more. With a team of experienced healthcare professionals and innovative digital tools at your fingertips, take control of your health journey with E-Health today." 
-      
-      image = '\src\assets\Images\consult.jpg'
-      button = "Read More"
-      imageBeforeText = {false}
-      />
-
-      <div className="specialities">
-        <h3>Our Specialities</h3>
-          <div className="sections">
-            <Services title = 'Diabates'/>
-            <Services title = 'Cardiovascular Checkup'/>
-            <Services title = 'Blood Pressure'/>
+          <div className='button'>
+          <Link to="/Findadoctor">
+          <button id='cart-btn2' >Find a doctor</button>
+        </Link>
+        <Link to="/ScheduleCall">
+        <button id='cart-btn3' >Schedule a Call</button>
+      </Link>
           </div>
+          
+        </div>
+        <div className='hero-image'>
+          <img src='https://t3.ftcdn.net/jpg/00/55/72/00/360_F_55720049_iwblEv63hK8UFdOnjN0lxdfgloetKBcs.jpg' />
+        </div>
       </div>
-      
-  <div className="Offer">
-    <h3>Our Services</h3>
-      <div className="special">
-        <Services
-          title='Remote Doctor Consultations'/>
-          <Services
-          title= 'Health Screening'/>
-          <Services 
-          title= 'Padriatic & nutrition Consultations'/>
-          <Services
-          title= 'Monthly HealthCare Plans'/>
-          <Services
-          title='Ambulance Service'/>
-          <Services
-          title='Physical checkups'/>
+
+      <div className='cards'>
+        <Cards
+          icon="bx bx-headphone"
+          title="Online Consultancy"
+        />
+
+        <Cards
+          icon="bx bx-calendar-check"
+          title="Make Appointment"
+        />
+
+        <Cards
+          icon="bx bxs-capsule"
+          title="Online Pharmacy"
+        />
+
+        <Cards
+          icon=" bx bxs-face-mask "
+          title="Find a Doctor"
+        />
       </div>
-       
-  </div>
+
+      <div className='about-us'>
+        <div className='hero-section' id='hero-section' >
+          <div className='hero-image'>
+            <img src='https://t4.ftcdn.net/jpg/05/87/65/83/360_F_587658387_Xbw7bVBWgFUbdyhQfZzNDWmhPK55NVnc.jpg' />
+          </div>
+          <div className='hero-details'>
+
+            <h2>About Us</h2>
+            <p> At E-HealthCare, we believe in leveraging cutting-edge technology to provide accessible, convenient, and personalized healthcare solutions tailored to your unique needs. Whether you're seeking medical advice, monitoring and managing a chronic condition, our platform offers a wide range of services, including telemedicine consultations, health tracking tools, virtual consultation and much more. </p>
+            <div className='button'>
+              <Link to="/ScheduleCall">
+              <button id='cart-btn2' >Contact Us</button>
+            </Link>
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <h2 className='heading2'>Our Specialities</h2>
+          <div className='specialities-card'>
+            <Specialities
+              image="https://assets.telegraphindia.com/telegraph/2022/Jul/1658785489_5e5b81e5-e60f-42d9-8f3f-d2e5f1a691e1.gif"
+              title="Diabetes"
+            />
+
+            <Specialities
+              image="https://www.yashodahealthcare.com/blogs/wp-content/uploads/2022/02/Heart-Disease.jpg"
+              title="Cardiovascular Diseases"
+            />
+
+            <Specialities
+              image="https://upload.wikimedia.org/wikipedia/commons/c/c6/Blood_pressure_monitoring.jpg"
+              title="Blood Pressure"
+            />
+          </div>
+        </div>
+
+        <div>
+        <h2 className='heading2'>Our Services</h2>
+        <div className='services-container'>
+        <Service 
+        icon="bx bx-user"
+        title="Remote Doctor Consultations" 
+        />
+
+        <Service
+        icon=" bx bx-test-tube" 
+        title="Health Screening "
+        />
+
+        <Service
+        icon="bx bx-bowl-rice"
+        title="Paediatric and Nutrition Consultations" 
+        />
+
+        <Service 
+        icon="bx bx-notepad"
+        title="Monthly Healthcare Plan" 
+        />
+
+        <Service
+        icon="bx bxs-capsule"
+        title="Medication and Lab delivery "
+        />
+
+        <Service
+        icon="bx bxs-ambulance"
+        title="Ambulance Services" 
       
-      <Footer/>
+        />
+        </div>
+        </div>
+      </div>
+  
+      <Footer />
     </div>
   )
 }

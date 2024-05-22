@@ -3,7 +3,6 @@ import { useState,useEffect } from 'react'
 import Doctordetail from '../Components/Doctordetail'
 
 
-
 const Doctorsdetails = () => {
 //  let [doctors,setDoctors]= useState(null)
 

@@ -4,15 +4,17 @@ import "./App.css";
 import DoctorRegistration from './assets/Pages/DoctorRegistration';
 import PatientRegistration from './assets/Pages/PatientRegistration';
 import Login from './assets/Pages/Login';
-import Home from './assets/Pages/Home';
 import Bookappointment from './assets/Pages/Bookappointment';
 import Pharmacy from './assets/Pages/Pharmacy'
 import Productdetails from './assets/Pages/Productdetails';
-import Finddoctor from './assets/Pages/Finddoctor';
 import Shoppingcart from './assets/Pages/Shoppingcart';
 import Doctorsdetails from './assets/Pages/Doctorsdetails';
 import ScheduleCall from './assets/Pages/ScheduleCall';
-
+import Home from './assets/Pages/Home';
+import Resources from './assets/Pages/Resources'
+import Contactus from './assets/Pages/Contactus'
+import Profile from './assets/Pages/Profile'
+import Findadoctor from './assets/Pages/Findadoctor';
 
 
 const App = () => {
@@ -20,19 +22,21 @@ const App = () => {
     <div>
     <BrowserRouter>
     <Routes>
-    <Route path='/Home' element={ <Home /> }/>
+    <Route path='/Home' element={<Home />} />
     <Route path='/Login' element={ <Login /> }/>
     <Route path='/PatientRegistration' element={ <PatientRegistration /> }/>
     <Route path='/DoctorRegistration' element={ <DoctorRegistration /> }/>
     <Route path='/Bookappointment' element={ <Bookappointment/> }/> 
     <Route path='/Pharmacy' element={ <Pharmacy/>}/> 
-    <Route path='/Productdetails' element={<Productdetails/>} />
-    <Route path='/Finddoctor' element={<Finddoctor/>} />
+    <Route path='/product/:id' element={<Productdetails/>} />
     <Route path='/Shoppingcart' element={<Shoppingcart/>} />
     <Route path='/Doctorsdetails' element={<Doctorsdetails/>} />
     <Route path='/ScheduleCall' element={<ScheduleCall/>} />
-    
-  
+    <Route path='/Resources' element={<Resources />} />
+    <Route path='/Contactus' element={<Contactus />} />
+    <Route path='/Profile' element={<Profile />} />
+    <Route path='/Findadoctor' element={<Findadoctor />} />
+   
     </Routes>
     </BrowserRouter>
     </div>

@@ -7,7 +7,7 @@ const Login = () => {
   let [isSubmitted, setIsSubmitted] = useState(false)
   let [email, setEmail] = useState('')
   let [password, setPassword] = useState('')
-  let [userType, setUserType] = useState('')
+  let [username, setUsername] = useState('')
   let [errors, setErrors] = useState('')
 
 
@@ -16,9 +16,6 @@ const Login = () => {
     stateUpdater(inputValue)
   }
 
-  function handleUserTypeChange(event) {
-    setUserType(event.target.value)
-  }
 
   function validateValues() {
     const errors = {};
@@ -35,7 +32,13 @@ const Login = () => {
       errors.password = 'Password must be at least 8 characters long'
     }
     return errors;
+
+    if (!username) {
+      errors.username = 'username is required'
+    }
   }
+
+ 
 
   function handleSubmit(e) {
     e.preventDefault();
@@ -45,6 +48,7 @@ const Login = () => {
       setIsSubmitted(true);
     }
 
+ 
   }
   return (
     <div className='form-container' id='login-form'>
@@ -61,10 +65,21 @@ const Login = () => {
         </div>
 
         <form className='form' id='form' onSubmit={handleSubmit}>
+        <div>
+        <label htmlFor='name'>UserName</label>
+        <br />
+        <input
+          id='name'
+          type='text'
+          value={username}
+          onChange={(event) => handleChange(event, setUsername)}
+        />
+        {errors.username && <span className='error'>{errors.username}</span>}
+      </div>
           <div>
             <label htmlFor='email'>Email</label>
             <br />
-            <input id='email' type='email' value={email} onChange={function (event) {
+            <input id='email' type='email'  value={email} onChange={function (event) {
               handleChange(event, setEmail)
             }} />
             {errors.email && <span className='error'>{errors.email}</span>}
@@ -74,20 +89,13 @@ const Login = () => {
           <div>
             <label htmlFor='password'>Password</label>
             <br />
-            <input id='password' type='password' value={password} onChange={function (event) {
+            <input id='password' type='password'  value={password} onChange={function (event) {
               handleChange(event, setPassword)
             }} />
             {errors.password && <span className='error'>{errors.password}</span>}
           </div>
-
-          <div>
-            <label htmlFor='usertype'>UserType</label>
-            <br />
-            <select type="usertype" id="usertype" value={userType} onChange={handleUserTypeChange}>
-              <option value="patient">Patient</option>
-              <option value="doctor">Doctor</option>
-            </select>
-          </div>
+          
+     
 
           <p className='forgot-password'>Forgot Password</p>
           <br />
@@ -103,19 +111,13 @@ const Login = () => {
             </div>
           </div>
 
-          <h4 id='heading'>Do not have an Account?</h4>
-
-          <div className='items'>
-
-            <Link to='/DoctorRegistration'>
-              <h3>DoctorSignUp</h3>
-            </Link>
-
-            <Link to='/PatientRegistration'>
-              <h3>Patient SignUp</h3>
-            </Link>
-
-          </div>
+          <div className='item'>
+          <h4>Do not have an Account?</h4>
+          <Link to='/PatientRegistration' className='link'>
+          <h3>Signup</h3>
+          </Link>
+          
+        </div>
         </form>
       </div>
     </div>

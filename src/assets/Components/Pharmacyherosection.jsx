@@ -25,7 +25,7 @@ const Pharmacyherosection = ({ searchItem, handleSearch }) => {
                     <i className='bx bx-cart-alt'></i>
                 </div>
             </div>
-            <hr />
+            
         </div>
     );
 };

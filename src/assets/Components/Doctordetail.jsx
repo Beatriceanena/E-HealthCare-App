@@ -1,8 +1,10 @@
 import React from 'react'
+import Navbar from './Navbar'
 
 const Doctordetail = (props) => {
     return (
         <div>
+        <Navbar />
             <div className='Doctors-details'>
                 <h3>Doctors Details</h3>
                 <div className='main-details-container' >

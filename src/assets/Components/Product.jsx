@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 const Product = (props) => {
   return (
@@ -11,9 +12,11 @@ const Product = (props) => {
           <h3>{props.title}</h3>
           <div className='view'>
           <p>UGX {props.price}</p> 
+          <Link to={`/product/${props.id}` } className='link1'>
           <p>View</p>
+          </Link>
           </div>
-          <div class="in-stock-banner">In Stock</div>
+          <div className="in-stock-banner">{props.status}</div>
           <button id='cart-btn'>Add to Cart</button>
         </div>
       </div>
@@ -21,4 +24,4 @@ const Product = (props) => {
   )
 }
 
-export default Product
+export default Product;

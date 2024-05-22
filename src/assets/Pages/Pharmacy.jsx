@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import Product from '../Components/Product';
 import Pharmacyherosection from '../Components/Pharmacyherosection';
+import Navbar from '../Components/Navbar'
+import Footer from '../Components/Footer';
 
 const Pharmacy = () => {
     const [products, setProducts] = useState(null);
@@ -34,6 +36,7 @@ const Pharmacy = () => {
 
     return (
         <div>
+        <Navbar />
             <Pharmacyherosection searchItem={searchItem} handleSearch={handleSearch} />
             <div className='cart-container'>
                 <div className='categories'>
@@ -60,9 +63,11 @@ const Pharmacy = () => {
                             filteredProducts.map(item => (
                                 <Product
                                     key={item.id}
+                                    id={item.id}
                                     title={item.attributes.productname}
                                     image={`http://localhost:1337${item.attributes.image.data.attributes.url}`}
                                     price={item.attributes.price}
+                                    status={item.attributes.status}
                                 />
                             ))
                         ) : (
@@ -71,6 +76,7 @@ const Pharmacy = () => {
                     </div>
                 </div>
             </div>
+            <Footer />
         </div>
     );
 };

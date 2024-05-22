@@ -1,6 +1,6 @@
 import React from 'react'
 
-const doctor = (props) => {
+const Doctor = (props) => {
   return (
     <div className='Finddoctor'>
       <div className='doctor-section'>
@@ -19,4 +19,4 @@ const doctor = (props) => {
   )
 }
 
-export default doctor
+export default Doctor
