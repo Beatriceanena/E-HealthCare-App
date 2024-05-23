@@ -1,7 +1,11 @@
 import React from 'react'
+import Navbar from '../Components/Navbar'
+import Footer from '../Components/Footer'
 
 const Bookappointment = () => {
   return (
+    <div>
+    <Navbar />
     <div id='appointment-form'>
       <h2 className='heading2'>Book Your Appointment</h2>
       <form className='appointment-form'>
@@ -25,10 +29,11 @@ const Bookappointment = () => {
             <input type='name' />
           </div>
           <div>
-            <label>Speciality</label>
-            <br />
-            <input type='text' />
-          </div>
+          <label>Speciality</label>
+          <br />
+          <input type='text'  />
+        </div>
+         
         </div>
 
         <div className='form-data'>
@@ -69,6 +74,8 @@ const Bookappointment = () => {
 
       </form>
 
+    </div>
+    <Footer />
     </div>
   )
 }

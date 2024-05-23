@@ -1,17 +1,32 @@
-import React from 'react'
-import './Footer.css'
-function Footer(props) {
+import React from 'react';
+
+const Footer = () => {
   return (
-    <div className='footer'>
-        <div className="contact" id='footer'>
-          <h5 >Contact Info</h5>
-          <a href="e-mail" type='e-mail' style={{color:'white'}}>ehealthcare@gmail.com</a>
-          <a href="number" style={{color:'white'}}>+256 758903837</a>
-          <a href="number" style={{color:'white'}}>+256 771629949</a>
+    <footer className="footer">
+      <div className="footer-container">
+        <div className="footer-section">
+          <h4>E-HealthCare</h4>
+          <p>Empowering and saving human lives from the non communicable diseases through providing accessible and affordable Healthcare to patients</p>
         </div>
-        <p> Copyright 2024 KanzuCode</p>
-    </div>
+        <div className="footer-section">
+          <h4>Contact Us</h4>
+          <p>Email: ehealthcare@gmail.com</p>
+          <p>Phone: +123 456 7890</p>
+          <p>Phone: +123 456 7890</p>
+        </div>
+        <div className="footer-section">
+          <h4>Follow Us</h4>
+          <div className="social-icons">
+            <a href="https://facebook.com" target="_blank" rel="noopener noreferrer">Facebook</a>
+            <a href="https://twitter.com" target="_blank" rel="noopener noreferrer">Twitter</a>
+            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer">Instagram</a>
+          </div>
+        </div>
+      </div>
+      <div className="footer-bottom">
+        <p>&copy; 2024 E-healthCare. All rights reserved.</p>
+      </div>
+    </footer>
   )
 }
-
-export default Footer
+  export default Footer

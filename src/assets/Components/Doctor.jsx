@@ -1,16 +1,16 @@
 import React from 'react'
 
-const doctor = () => {
+const Doctor = (props) => {
   return (
     <div className='Finddoctor'>
       <div className='doctor-section'>
         <div className='doc-image'>
-          <img src='https://t3.ftcdn.net/jpg/06/48/69/42/360_F_648694278_haC94bdL26EedqLMIbMpLACqzxwuvq4f.jpg' />
+          <img src={props.image} />
         </div>
 
         <div className='doctor-details'>
-        <h3>Doctors Name</h3>
-        <p>Speciality</p>
+        <h3>{props.doctorname}</h3>
+        <p>{props.speciality}</p>
       </div>
      
       </div>
@@ -19,4 +19,4 @@ const doctor = () => {
   )
 }
 
-export default doctor
+export default Doctor

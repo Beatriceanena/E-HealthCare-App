@@ -1,8 +1,182 @@
-body {
-    font-family: 'Roboto', sans-serif;
-    font-weight: 300;
-  }
+/* Navbar CSS*/
+.home{
+    width: 100%;
+    box-sizing: border-box;
+    margin: 0 auto;
+    padding: 0rem;
+}
+#logo-image{
+    width:3.5rem;
+    height: 3.5rem;
+}
+.navigation{
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    margin: 1rem 0rem 0.5rem 0rem;
+}
+.logo-section{
+    display: flex;
+    margin-left: -1rem;
+}
+#bookappointment{
+    width: 10rem;
+    height: 3.5rem;
+    justify-content: center;
+    background-color: #089CAD;
+    text-align: center;
+    padding: 1rem;
+    border: none;
+    cursor: pointer;    
+    color: #fff;
+    border-radius: 5px;
+    font-family: "Nunito", sans-serif;
+    font-size: 12px;
 
+}
+
+.login-container{
+    display: flex;
+    font-size: 20px;
+    gap: 1.5rem;
+    margin-left: 15rem;
+}
+
+.nav-bar{
+    display: flex;
+    background-color: #005365;
+    height: 4rem;
+    font-size: 18px;
+    justify-content: center;
+}
+
+.nav-bar ul{
+    display: flex;
+}
+
+.nav-bar ul li{
+    list-style: none;
+    margin: 0rem 2.5rem;
+    color: #fff;
+    font-size: 20px;
+    cursor: pointer;    
+    font-family: "Nunito", sans-serif;
+
+}
+.hero-section{
+    border-bottom: 1px solid #089CAD;
+    width: 100%;
+    margin: 0.4rem 0.5rem;
+    padding-bottom: 0.5rem;
+}
+#heading3{
+ margin-left: -6rem;
+ font-family: "Bree Serif", serif;
+}
+.hero-image{
+    width: 70rem;
+    height: 20rem;
+}
+.hero-image img{
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+}
+.hero-details{
+    margin:-1rem 0rem 0rem 0.5rem;
+    padding:1rem;
+    width: 70rem;
+}
+.hero-details h1{
+   color: #089CAD;
+   font-weight: 600px;
+   font-family: "Bree Serif", serif;
+}
+.hero-details p{
+    font-size: 20px;
+    font-family: "Nunito", sans-serif;
+
+}
+.header-card{
+    border: 1px solid black;
+    width: 16rem;
+    height: 10rem;
+    background-color:#089CAD;
+    border-radius: 10px;
+    margin: 0.7rem;
+    border: none;
+}
+.cards{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 2.5rem 0rem;
+}
+.card-details{
+    margin: 1.5rem;
+    text-align: center;
+    color: #fff;
+    font-size: 20px;
+    font-family: Nunito;
+}
+.card-details i{
+    font-size: 30px;
+    margin:0rem 3rem;
+    border: 1px solid #fff;
+    border-radius: 50px;
+    padding: 15px;
+}
+#icon i{
+   color: #089CAD; 
+   font-size: 40px;
+   border: 1px solid #089CAD;
+}
+.about-us{
+    margin: 3rem 2rem;
+}
+#hero-section{
+    border: none;
+
+}
+.specialities{
+    width: 24rem;
+    margin: 1rem;
+    font-size: 18px;
+    font-family: "Nunito", sans-serif;
+
+}
+
+.specialities-card{
+    display: flex;
+    justify-content: center;
+}
+#header-card{
+    background-color: #fff;
+    color: #089CAD;
+    border: 1px solid #089CAD;
+    width: 18rem;
+    height: 12rem;
+}
+.services-container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.heading{
+    color: black;
+    font-family: nunito;
+}
+.heading2{
+ color:#089CAD;
+ text-align: center;
+ font-size: 27px;
+ margin-top: 2rem;
+ font-family: "Bree Serif", serif;
+}
+
+
+/* login form*/
 .image img{
     width:100%;
     height: 100%;
@@ -31,7 +205,7 @@ body {
 .form{
     margin: 0.5rem 2.5rem;
 }
-input,select{
+input, select{
     width: 26rem;
     padding: 0.5rem 0rem;
     margin: 0.4rem 0rem;
@@ -51,6 +225,10 @@ input,select{
     justify-content: center;
     align-items: center;
     font-size: 18px;
+    font-family: "Nunito", sans-serif;
+    cursor: pointer;
+    color: #fff;
+    border-radius: 5px;    
 }
 .items{
     display:flex;
@@ -66,11 +244,21 @@ input,select{
     text-decoration: none;
     font-size: 18px;
 }
+.form-items h3 ,.form-items p, .forgot-password{
+    font-family: "Nunito", sans-serif;  
+}
 h3{
     color: hsl(191, 100%, 20%);
+    font-family: "Nunito", sans-serif;
+    font-size: 20px;
+    font-weight: 500px;
 }
 h2{
     color: #089CAD;
+    font-family: "Bree Serif", serif;
+}
+label{
+    font-family: "Nunito", sans-serif;
 }
 
 /* Login form CSS*/
@@ -78,6 +266,9 @@ h2{
     display: flex;
     justify-content: center;
     margin-top: 1rem;
+}
+.item h4{
+    font-family: "Nunito", sans-serif;
 }
 
 #login-form{
@@ -92,7 +283,9 @@ h2{
     border-radius: 5px;
     justify-content: center;
     padding: 5px;
-    
+    cursor: pointer;   
+    font-size: 15px;
+    font-family: "Nunito", sans-serif;
 }
 .button-text{
     margin-top: 0.5rem;
@@ -103,6 +296,7 @@ h2{
 }
 #google-icon{
 width: 2rem;
+height: 2rem;
 }
 .login-form{
     width: 50%;
@@ -126,9 +320,7 @@ width: 2rem;
     width: 14rem;
     margin: 0.6rem 0rem;
 }
-.heading2{
-    text-align: center;
-}
+
 #appointment-btn{
 width: 15rem;
 background-color: #005365;
@@ -138,13 +330,30 @@ text-align: center;
 justify-content: center;
 border: none;
 font-size: 15px;
+cursor: pointer;
+color: #fff;
+border-radius: 5px;    
+font-family: "Nunito", sans-serif;
+
 }
+.link, .link1{
+    text-decoration: none;
+    font-family: nunito;
+    
+}
+.link1{
+   color: #000; 
+}
+#message1{
+    height:8rem;
+    margin-bottom:1.5rem;
+}
+
 #message{
-    width: 29rem;
     height: 8rem;
     margin-bottom: 1.5rem;
 }
-#time{
+#time, #message{
     width: 29rem;
 }
 option{
@@ -152,7 +361,9 @@ option{
 }
 .error{
     color: red;
-    margin:2rem 0rem;
+    margin:2rem 0rem;     
+    font-family: "Nunito", sans-serif;
+
 }
 
 /*Pharmacy CSS*/
@@ -171,9 +382,7 @@ hr{
     display: flex;
     align-items: center
 }
-input[type="text"]{
-    padding: 0.5rem;
-}
+
 #searchbar{
     width: 16rem;
     border-top-right-radius: 0;
@@ -190,6 +399,8 @@ input[type="text"]{
     border-bottom-right-radius: 0.3rem;
     border-top-left-radius: 0rem;
     border-bottom-left-radius: 0rem;
+    color: #fff;
+
 
 }
 .icon i{
@@ -212,7 +423,10 @@ input[type="text"]{
 .category{
 margin: 2.5rem 2rem;
 }
-
+.category p{
+    font-family: nunito;
+    font-size: 20px;
+}
 .image-banner{
 width: 75%;
 height: 230px;
@@ -239,8 +453,9 @@ border: none;
     margin: 1.2rem;
 }
 .cart-image{
-    width:16.5rem ;
-    height: 9rem;
+    width:16rem ;
+    height: 12rem;
+    margin-bottom: -1.5rem;
 }
 .cart-image img{
 object-fit: cover;
@@ -259,13 +474,18 @@ border-top-left-radius: 8px;
     justify-content: center;
     align-content: center;
     margin:0 auto;
+    cursor: pointer;
+    color: #fff;
+    border-radius: 5px;    
+    font-family: "Nunito", sans-serif;
+
 }
 .item-details{
     padding: 0.9rem 1.5rem;
 }
 .item-details p{
     font-size: 20px;
-
+    font-family: "Nunito", sans-serif;
 }
 .view{
     display: flex;
@@ -281,7 +501,8 @@ border-top-left-radius: 8px;
     color: white;
     padding: 8px 10px;
     font-size: 18px;
-    margin: -16.65rem -1.5rem;
+    font-family: "Nunito", sans-serif;
+    margin: -18.9rem -1.5rem;
     border-top-left-radius: 5px;
     
 }
@@ -304,6 +525,8 @@ border-top-left-radius: 8px;
     border-radius: 10px;
     height: 26rem;
     padding: 2rem 1.8rem 0rem 1.8rem;
+    font-family: "Nunito", sans-serif;
+
 }
 .detail{
     display: flex;
@@ -311,13 +534,21 @@ border-top-left-radius: 8px;
 }
 .detail p{
     padding: 0.2rem 0.5rem;
+    font-family: "Nunito", sans-serif;
+
 }
-#cart-btn2{
-    width: 8rem;
-    padding: 1rem;
+#cart-btn2, #cart-btn3{
+    width: 12rem;
+    padding: 1.5rem;
     border: none;
     background-color: #005365;
-    margin-top: 2rem;
+    margin-top: 1.5rem;
+    font-size: 16px;
+    font-family: "Nunito", sans-serif;
+    justify-content: center;
+    cursor: pointer; 
+    color: #fff;
+    border-radius: 5px;   
 }
 
 .cart-items{
@@ -372,27 +603,191 @@ border-top-left-radius: 8px;
 }
 .lists{
     width: 30rem;
-
     font-size: 1.2rem;
 }
 .lists h3{
     font-size: 2rem;
 }
 .about-doctors{
-    display: flex;
-    width: 100%;
+  display: flex;
+  width: 100%;
   justify-content: space-around;
   margin: 4rem 0.5rem;
-
 }
 
 #appointment-btn2{
-    width: 15rem;
+    width: 14rem;
     background-color: #005365;
-    padding: 1rem 2.5rem;
+    padding: 1rem 2rem;
     text-align: center;
     justify-content: center;
     border: none;
     font-size: 15px;
     margin: 2.5rem 0rem;
+    color: #fff;
+    border-radius: 5px;
+    font-family: "Nunito", sans-serif;
+
     }
+    /*Doctors details page CSS*/
+    .main-details-container{
+      width:100%;
+      margin: 3rem 0rem;
+      background-color: #D8EBEC;
+      height: 26rem;
+     padding: 1.2rem 0rem;
+    }
+
+    .doctor-details-container{
+      display: flex;  
+      margin: 0rem 3rem;
+
+    }
+    .details-container{
+        border: 1px solid black;
+        width: 35rem;
+        height:21.5rem ;
+        margin: 1.9rem 1rem;
+        background-color: #fff;
+        border: 1px solid #089CAD;
+        border-radius: 5px;
+        padding: 1rem 0rem 0rem 3rem; 
+    }
+    .doctor-details-image{
+        width: 26rem;
+        height: 22rem;
+        border: 1px solid black;
+        margin:2rem;
+        border: 1px solid #089CAD;
+        border-radius: 5px;
+    }
+    .doctor-details-image img{
+        object-fit: cover;
+        width: 100%;
+        height: 100%;
+    }
+    .details-container{
+        font-size: 20px;
+        font-family: "Nunito", sans-serif;
+
+    }
+  .details-container h4,.details-container p{
+     margin-top: -1rem;
+     font-family: "Nunito", sans-serif;
+
+  }
+ #icons-2{
+    font-size: 28px;
+    color: #089CAD;
+    padding: 0.25rem;
+ }
+ .button{
+    display: flex;
+ }
+ #cart-btn3{
+    background-color: #089CAD;
+    margin-left: 1rem;
+ }
+
+ span{
+    margin-left: 0.5rem;
+ }
+ 
+/*Contactus CSS*/
+#heading4{
+    margin-left: -35rem;
+    font-family: "Bree Serif", serif;
+
+}
+#contact-form{
+    padding: 2rem;
+}
+
+/*Resources CSS*/
+#hero-image{
+    display: flex;
+    flex-wrap: wrap;
+    width: 75rem;
+    margin: 1rem 1rem 0rem 0.3rem;
+}
+.resource-image{
+    width: 17rem;
+    height: 10rem;
+    margin: 0.4rem;
+    
+}
+.resource-image img{
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    border: 1px solid #089CAD;
+    border-radius: 5px;
+    
+}
+#resource-image1{
+    margin: 1.5rem 1.5rem 0rem 1.2rem;
+    border: 1px solid #089CAD;
+    border-radius: 5px;
+}
+.hero-details ol li{
+    font-size: 20px;
+    font-family: "Nunito", sans-serif;
+
+}
+
+/*Footer CSS*/
+ .footer {
+    background-color: #005365;
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+    margin:5rem 0rem 0rem 0rem;
+  }
+  
+  .footer-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  .footer-section {
+    margin: 20px;
+    flex: 1;
+  }
+  
+  .footer-section h4 {
+    margin-bottom: 10px;
+    font-size: 1.2em;
+    font-family: nunito;
+  }
+  
+  .footer-section p {
+    margin: 0;
+    line-height: 1.5;
+    font-family: nunito;
+  }
+  
+  .social-icons a {
+    margin: 0 10px;
+    color: white;
+    text-decoration: none;
+    font-family: nunito;
+  }
+  
+  .social-icons a:hover {
+    text-decoration: underline;
+  }
+  
+  .footer-bottom {
+    margin-top: 20px;
+    border-top: 1px solid #fff;
+    padding-top: 10px;
+  }
+  
+  .footer-bottom p {
+    margin: 0;
+    font-family: nunito;
+  }

@@ -1,19 +1,22 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
-const Product = () => {
+const Product = (props) => {
   return (
     <div className='product-items'>
       <div className='cart-item'>
         <div className='cart-image'>
-          <img src='https://s3.envato.com/files/91718211/Previews/Preview2.jpg' />
+          <img src={props.image}/>
         </div>
         <div className='item-details'>
-          <h3>Metrohebrophyn</h3>
+          <h3>{props.title}</h3>
           <div className='view'>
-          <p>UGX 200000</p> 
+          <p>UGX {props.price}</p> 
+          <Link to={`/product/${props.id}` } className='link1'>
           <p>View</p>
+          </Link>
           </div>
-          <div class="in-stock-banner">In Stock</div>
+          <div className="in-stock-banner">{props.status}</div>
           <button id='cart-btn'>Add to Cart</button>
         </div>
       </div>
@@ -21,4 +24,4 @@ const Product = () => {
   )
 }
 
-export default Product
+export default Product;

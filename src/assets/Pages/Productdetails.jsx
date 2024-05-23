@@ -1,50 +1,61 @@
 import React from 'react'
+import { useEffect, useState } from 'react';
+import { useParams } from 'react-router-dom';
 import Pharmacyherosection from '../Components/Pharmacyherosection'
+import Productdetail from '../Components/Productdetail';
+import Navbar from '../Components/Navbar';
+import Footer from '../Components/Footer';
 
 
 const Productdetails = () => {
+    const { id } = useParams();
+    const [product, setProduct] = useState(null);
+
+    const fetchData = () => {
+        const apiUrl = `https://e-healthcare-strapi-backend-1.onrender.com/api/products/${id}?populate=*`;
+        fetch(apiUrl)
+            .then(response => response.json())
+            .then(dataObject => {
+                const productData = dataObject.data;
+                setProduct(productData);
+            })                                          
+            .catch(error => {
+                console.error('Error fetching product:', error);
+            });
+            
+    };
+
+    useEffect(() => {
+        fetchData();
+    }, [id]);
+
     return (
         <div>
+            <Navbar />
             <Pharmacyherosection />
+          <div>
 
-
-            <div className='product-details'>
-                <div className='product-image'>
-                    <h3>Product Details</h3>
-                    <img src='https://www.mycare.lk/image/cache/catalog/products/004457-550x550.png' />
-                </div>
-
-
-                <div className='product-description'>
-
-
-                    <div className='detail'>
-                        <h3>Drug Name:</h3>
-                        <p>Paracetamol</p>
-                    </div>
-
-
-                    <div className='detail'>
-                        <h3>Price:</h3>
-                        <p>UGX 20000</p>
-                    </div>
-
-
-                    <div className='detail'>
-                        <h3>Status:</h3>
-                        <p>Instock</p>
-                    </div>
-
-
-                    <hr />
-                    <h2>Description</h2>
-                    <p>For babies 0 to 6 months, The AVENT soother is orthodontic, dishwasher safe, odorless and taste free. This pacifier is made of durable silicone which is taste and odor free, so your baby is more likely to accept it. It is strong and resists becoming sticky, discolored or misshapen and it is easy to sterilize</p>
-                    <button id='cart-btn2' >Add to Cart</button>
-                </div>
+                {
+                    product ? (
+                        <Productdetail
+                          key={product.id}
+                          title={product.attributes.productname}
+                          image={`https://e-healthcare-strapi-backend-1.onrender.com${product.attributes.image.data.attributes.url}`}
+                          price={product.attributes.price}
+                          description={product.attributes.description}
+                          status={product.attributes.status}
+                        />
+                            )
+                        :
+                        (
+                            <p>Product not available.....</p>
+    
+                        )
+                }
             </div>
-        </div>
-
-
+            <Footer />
+         </div>
+        
     )
 }
 
