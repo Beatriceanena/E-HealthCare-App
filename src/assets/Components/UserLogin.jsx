@@ -1,14 +1,22 @@
 import React from 'react'
 import { useState } from 'react';
 import { Link } from "react-router-dom";
-
+import { useNavigate } from "react-router-dom";
+import { useAuthContext } from '../../User-authentication/AuthContext';
+import { API } from '../../User-authentication/Constant';
+import { setToken } from '../../User-authentication/Helpers';
+import { toast,ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const Login = () => {
-  let [isSubmitted, setIsSubmitted] = useState(false)
-  let [email, setEmail] = useState('')
-  let [password, setPassword] = useState('')
-  let [username, setUsername] = useState('')
-  let [errors, setErrors] = useState('')
+  const [isSubmitted, setIsSubmitted] = useState(false)
+  const [email, setEmail] = useState('')
+  const [password, setPassword] = useState('')
+  const [errors, setErrors] = useState('')
+  const navigate = useNavigate();
+  const { setUser } = useAuthContext();
+  const [isLoading, setIsLoading] = useState(false);
+  const [error, setError] = useState("");
 
 
   function handleChange(event, stateUpdater) {
@@ -33,23 +41,54 @@ const Login = () => {
     }
     return errors;
 
-    if (!username) {
-      errors.username = 'username is required'
-    }
   }
 
- 
+  const onFinish = async () => {
+    setIsLoading(true);
+    try {
+      const value = {
+        identifier: email,
+        password: password,
+      };
+      const response = await fetch(`${API}/auth/local`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(value),
+      });
 
-  function handleSubmit(e) {
+      const data = await response.json();
+      if (data?.error) {
+        throw data?.error;
+      } else {
+        setToken(data.jwt);
+        setUser(data.user);
+
+        toast.success(` ${ 'Welcome back' + data.user.username}!`);
+
+        navigate("/", { replace: true });
+      }
+    } catch (error) {
+      console.error(error);
+      setError(error?.message ?? "Something went wrong!");
+      toast.error("Failed to create account");
+    } finally {
+      setIsLoading(false);
+    }
+  };
+
+  const handleSubmit = (e) => {
     e.preventDefault();
     const validationErrors = validateValues();
     setErrors(validationErrors);
-    if (Object.keys(validationErrors).length === 0) {
-      setIsSubmitted(true);
-    }
 
- 
-  }
+    if (Object.keys(validationErrors).length === 0) {
+      onFinish();
+    }
+  };
+
+
   return (
     <div className='form-container' id='login-form'>
       <div className='image'>
@@ -65,17 +104,7 @@ const Login = () => {
         </div>
 
         <form className='form' id='form' onSubmit={handleSubmit}>
-        <div>
-        <label htmlFor='name'>UserName</label>
-        <br />
-        <input
-          id='name'
-          type='text'
-          value={username}
-          onChange={(event) => handleChange(event, setUsername)}
-        />
-        {errors.username && <span className='error'>{errors.username}</span>}
-      </div>
+      
           <div>
             <label htmlFor='email'>Email</label>
             <br />
@@ -96,18 +125,19 @@ const Login = () => {
           </div>
           
      
-
           <p className='forgot-password'>Forgot Password</p>
           <br />
 
-          <button onSubmit={handleSubmit} id='button1'>Login</button>
+          <button  id='button1'> {isLoading ? 'Loading...' : 'Login'}
+          </button>
+          <ToastContainer />
 
           <div id='button'>
             <div>
               <img src='https://cdn1.iconfinder.com/data/icons/google-s-logo/150/Google_Icons-09-512.png' id="google-icon" />
             </div>
             <div className='button-text'>
-              Login in with Google
+              Login with Google
             </div>
           </div>
 

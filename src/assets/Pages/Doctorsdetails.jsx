@@ -1,50 +1,52 @@
 import React from 'react'
-import { useState,useEffect } from 'react'
+import { useState, useEffect } from 'react'
+import { useParams } from 'react-router-dom';
 import Doctordetail from '../Components/Doctordetail'
-
+import Footer from '../Components/Footer';
 
 const Doctorsdetails = () => {
-//  let [doctors,setDoctors]= useState(null)
+  const { id } = useParams();
+  const [medicalpersonel, setMedicalPersonel] = useState(null);
 
-//  function fetchData(){
-//     let apiUrl='http://localhost:1337/api/doctors?populate=*'
-//     fetch(apiUrl)
-//       .then((response) =>{
-//         return response.json();
-//       })
-//       .then((dataObject)=> {
-//         let doctorData=dataObject.data
-//         setDoctors=(doctorData)
-//       })
-    
-//     }
+  const fetchData = () => {
+    const apiUrl = `http://localhost:1337/api/medicalpersonels/${id}?populate=*`;
+    fetch(apiUrl)
+      .then(response => response.json())
+      .then(dataObject => {
+        const medicalpersonelData = dataObject.data;
+        setMedicalPersonel(medicalpersonelData);
+      })
+      .catch(error => {
+        console.error('Error fetching doctors:', error);
+      });
+  };
 
-// useEffect(() => {
-// fetchData();
-//  }, [])
- 
+  useEffect(() => {
+    fetchData();
+}, [id]);
+
   return (
     <div>
-     {
-    //   doctors !== null ?
 
-    //       (doctors.map((item) => {
-    //           return (
-                  <Doctordetail
-                      // key={item.id}
-                      // title={item.attributes.doctorname}
-                      // image={`http://localhost:1337${item.attributes.image.data.attributes.url}`}
-                      // number={item.attributes.phonenumber}
-                      // speciality={props.speciality}
-                      // location={props.location}
-                      // email={props.email}
-                  />
-          //     )
-          // })) :
-          // (
-          //     <p>Loading.....</p>
-          // )
-  }
+        {
+          medicalpersonel ? (
+              <Doctordetail
+                key={medicalpersonel.id}
+                name={medicalpersonel.attributes.doctorname}
+                image={`http://localhost:1337${medicalpersonel.attributes.image.data[0].attributes.url}`}
+                speciality={medicalpersonel.attributes.speciality}
+                phonenumber={medicalpersonel.attributes.telephonenumber}
+                email={medicalpersonel.attributes.email}
+                location={medicalpersonel.attributes.location}
+              />
+                  )
+              :
+              (
+                  <p>Doctor not available.....</p>
+              )
+      }
+
+      <Footer />
     </div>
   )
 }

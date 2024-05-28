@@ -306,36 +306,22 @@ height: 2rem;
 
 .appointment-form{
     border: 1px solid #089CAD ;
-    width: 40%;
+    width: 36%;
     margin: 0 auto;
     padding: 2.5rem;
     border-radius: 5px;
+  
 }
 .form-data{
     display: flex;
     gap: 1rem;
 }
 
-.form-data input{
-    width: 14rem;
+.form-data input, .select-options{
+    width: 13rem;
     margin: 0.6rem 0rem;
 }
 
-#appointment-btn{
-width: 15rem;
-background-color: #005365;
-margin:0 auto;
-padding: 1rem 2.5rem;
-text-align: center;
-justify-content: center;
-border: none;
-font-size: 15px;
-cursor: pointer;
-color: #fff;
-border-radius: 5px;    
-font-family: "Nunito", sans-serif;
-
-}
 .link, .link1{
     text-decoration: none;
     font-family: nunito;
@@ -345,14 +331,10 @@ font-family: "Nunito", sans-serif;
    color: #000; 
 }
 #message1{
-    height:8rem;
-    margin-bottom:1.5rem;
+    height:7rem;
+    margin-bottom:1.9rem;
 }
 
-#message{
-    height: 8rem;
-    margin-bottom: 1.5rem;
-}
 #time, #message{
     width: 29rem;
 }
@@ -361,7 +343,7 @@ option{
 }
 .error{
     color: red;
-    margin:2rem 0rem;     
+    margin:0.1rem 0rem;     
     font-family: "Nunito", sans-serif;
 
 }
@@ -378,18 +360,10 @@ hr{
     border-top: none;
 }
 
-.searchbar{
-    display: flex;
-    align-items: center
-}
-
 #searchbar{
-    width: 16rem;
-    border-top-right-radius: 0;
-    border-bottom-right-radius: 0;
-    border-top-left-radius: 0.3rem;
-    border-bottom-left-radius: 0.3rem;
+    width: 20rem;
     padding: 0.6rem 2rem;
+    border: 1px solid #089CAD;
 }
 #search-btn{
     padding: 0.7rem 2.5rem;
@@ -538,8 +512,8 @@ border-top-left-radius: 8px;
 
 }
 #cart-btn2, #cart-btn3{
-    width: 12rem;
-    padding: 1.5rem;
+    width: 11rem;
+    padding: 1.1rem;
     border: none;
     background-color: #005365;
     margin-top: 1.5rem;
@@ -584,7 +558,7 @@ border-top-left-radius: 8px;
 .doctor-details{
     background-color: #089CAD;
     color: #fff;
-    padding: 0rem 1.5rem;
+    padding: 0rem 1.3rem;
     width: 11.5rem;
     font-size: 16px;
     position: relative;
@@ -592,8 +566,10 @@ border-top-left-radius: 8px;
     margin: -10rem 1.4rem;
     border-top-right-radius: 20px;
 }
-.doctor-details h3{
+.doctor-details p{
     color: black;
+    margin-top: -1rem;
+    font-weight: 500;
 }
 .about-doctors-image img{
     width: 38rem;
@@ -634,7 +610,7 @@ border-top-left-radius: 8px;
       width:100%;
       margin: 3rem 0rem;
       background-color: #D8EBEC;
-      height: 26rem;
+      height: 27rem;
      padding: 1.2rem 0rem;
     }
 
@@ -642,6 +618,9 @@ border-top-left-radius: 8px;
       display: flex;  
       margin: 0rem 3rem;
 
+    }
+    .Doctors-details h3{
+        margin: 2rem 0rem -1rem 3rem;
     }
     .details-container{
         border: 1px solid black;
@@ -653,13 +632,19 @@ border-top-left-radius: 8px;
         border-radius: 5px;
         padding: 1rem 0rem 0rem 3rem; 
     }
+    
+    .doctor-info{
+        color: #005365;
+        font-weight: 600;
+    }
     .doctor-details-image{
         width: 26rem;
-        height: 22rem;
+        height: 23rem;
         border: 1px solid black;
         margin:2rem;
         border: 1px solid #089CAD;
         border-radius: 5px;
+        
     }
     .doctor-details-image img{
         object-fit: cover;
@@ -669,7 +654,7 @@ border-top-left-radius: 8px;
     .details-container{
         font-size: 20px;
         font-family: "Nunito", sans-serif;
-
+        padding-top: 2rem;
     }
   .details-container h4,.details-container p{
      margin-top: -1rem;
@@ -677,9 +662,12 @@ border-top-left-radius: 8px;
 
   }
  #icons-2{
-    font-size: 28px;
+    font-size: 25px;
     color: #089CAD;
-    padding: 0.25rem;
+    padding: 0.40rem;
+    margin: 0.2rem;
+    border: 1px solid #089CAD;
+    border-radius: 50px;
  }
  .button{
     display: flex;
@@ -691,6 +679,9 @@ border-top-left-radius: 8px;
 
  span{
     margin-left: 0.5rem;
+ }
+ #List-items li{
+    font-family: "Nunito", sans-serif;
  }
  
 /*Contactus CSS*/
@@ -732,7 +723,6 @@ border-top-left-radius: 8px;
 .hero-details ol li{
     font-size: 20px;
     font-family: "Nunito", sans-serif;
-
 }
 
 /*Footer CSS*/

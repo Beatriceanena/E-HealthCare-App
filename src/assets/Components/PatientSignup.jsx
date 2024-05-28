@@ -1,6 +1,10 @@
-import React, { useState } from 'react';
+import React, { useState} from 'react';
 import { Link } from 'react-router-dom';
 import { ToastContainer, toast } from "react-toastify";
+import { useNavigate } from "react-router-dom";
+import { useAuthContext } from '../../User-authentication/AuthContext';
+import { API } from '../../User-authentication/Constant';
+import { setToken } from '../../User-authentication/Helpers';
 import 'react-toastify/dist/ReactToastify.css';
 
 const PatientSignup = () => {
@@ -10,48 +14,14 @@ const PatientSignup = () => {
   const [password, setPassword] = useState('');
   const [confirmpassword, setConfirmpassword] = useState('');
   const [errors, setErrors] = useState({});
-
+  const [error, setError] = useState("");
+  const [isLoading, setIsLoading] = useState(false);
+  const navigate = useNavigate();
+  const {setUser } = useAuthContext();
+ 
   const handleChange = (event, stateUpdater) => {
     const inputValue = event.target.value;
     stateUpdater(inputValue);
-  };
-
-  const createPatient = () => {
-    const apiUrl = 'https://e-healthcare-strapi-backend-1.onrender.com/api/patients';
-    const requestObject = {
-      method: 'POST',
-      body: JSON.stringify({
-        data: {
-          username: username,
-          email: email,
-          password: password,
-          confirmpassword: confirmpassword,
-        },
-      }),
-      headers: {
-        'Content-Type': 'application/json',
-      },
-    };
-
-    fetch(apiUrl, requestObject)
-      .then((response) => {
-        if (response.ok) {
-          return response.json();
-        } else {
-          throw new Error(response.statusText);
-        }
-      })
-      .then((data) => {
-        setEmail('');
-        setUsername('');
-        setPassword('');
-        setConfirmpassword('');
-        toast.success("Patient account is successfully created");
-      })
-      .catch((error) => {
-        console.log(error);
-        toast.error("Failed to create account");
-      });
   };
 
   const validateValues = () => {
@@ -77,15 +47,49 @@ const PatientSignup = () => {
     return errors;
   };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    const validationErrors = validateValues();
-    setErrors(validationErrors);
-    if (Object.keys(validationErrors).length === 0) {
-      createPatient();
-      setIsSubmitted(true);
-    }
-  };
+
+    const onFinish = async (values) => {
+      setIsLoading(true);
+      try {
+        const response = await fetch(`${API}/auth/local/register`, {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(values),
+        });
+  
+        const data = await response.json();
+        if (data?.error) {
+          throw data?.error;
+        } else {
+          setToken(data.jwt);
+  
+          setUser(data.user);
+  
+          toast.success(`Welcome to E-Healthcare, ${data.user.username}!`);
+  
+          navigate("/Login", { replace: true });
+        }
+      } catch (error) {
+        console.error(error);
+        setError(error?.message ?? "Something went wrong!");
+        toast.error("Failed to create account");
+      } finally {
+        setIsLoading(false);
+      }
+    };
+  
+    const handleSubmit = (e) => {
+      e.preventDefault();
+      const validationErrors = validateValues();
+      setErrors(validationErrors);
+      if (Object.keys(validationErrors).length === 0) {
+        const values = { username, email, password, confirmpassword };
+        onFinish(values);
+      }
+    };
+
 
   return (
     <div className='form-container' id='formcontainer'>
@@ -100,7 +104,7 @@ const PatientSignup = () => {
           <p>Welcome, Create an Account</p>
         </div>
 
-        <form className='form' onSubmit={handleSubmit}>
+        <form className='form'  onSubmit={handleSubmit}>
           <div>
             <label htmlFor='name'>UserName</label>
             <br />
@@ -153,7 +157,8 @@ const PatientSignup = () => {
           <br />
           <div>
           
-            <button type='submit' id='button1'>SignUp</button>
+            <button type='submit' id='button1'>{isLoading ? 'Signing Up...' : 'SignUp'}
+            </button>
             <ToastContainer />
           </div>
 
