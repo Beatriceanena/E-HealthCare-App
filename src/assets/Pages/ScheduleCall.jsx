@@ -2,8 +2,15 @@ import React from 'react'
 import Navbar from '../Components/Navbar'
 import { Link } from 'react-router-dom'
 import Footer from '../Components/Footer'
+import { useAuthContext } from '../../User-authentication/AuthContext';
+import { useNavigate } from 'react-router-dom';
 
 function ScheduleCall() {
+  const {user}= useAuthContext()
+  const navigate=useNavigate()
+  if (!user){
+    navigate('/Login')
+  }
   return (
     <div>
       <Navbar />
