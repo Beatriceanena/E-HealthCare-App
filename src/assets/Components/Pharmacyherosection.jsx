@@ -17,9 +17,6 @@ const Pharmacyherosection = ({ searchItem, handleSearch }) => {
                             onChange={handleSearch}
                         />
                     </div>
-                    <div>
-                        <button type='submit' id='search-btn'>Search</button>
-                    </div>
                 </div>
                 <div className='icon'>
                     <i className='bx bx-cart-alt'></i>

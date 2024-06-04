@@ -10,9 +10,9 @@ const Footer = () => {
         </div>
         <div className="footer-section">
           <h4>Contact Us</h4>
-          <p>Email: ehealthcare@gmail.com</p>
-          <p>Phone: +123 456 7890</p>
-          <p>Phone: +123 456 7890</p>
+          <p>Phone: +256 758185675</p>
+          <p>Phone: +256 786017807</p>
+          <p>Email: ehealthcareservices2024.com</p>
         </div>
         <div className="footer-section">
           <h4>Follow Us</h4>

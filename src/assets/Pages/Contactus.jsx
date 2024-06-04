@@ -4,11 +4,11 @@ import Pharmacyherosection from '../Components/Pharmacyherosection'
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import Footer from '../Components/Footer'
+import emailjs from 'emailjs-com';
 
 const Contactus = () => {
   //setup state for isSubmitted, 
   let [isSubmitted, setIsSubmitted] = useState(false)
-
   // set state for name, email and profile
   let [username, setUsername] = useState('')
   let [email, setEmail] = useState('')
@@ -37,12 +37,32 @@ const Contactus = () => {
     return errors;
   }
 
+  function sendEmail() {
+    const templateParams = {
+      username,
+      email,
+      message,
+      to_email: 'ehealthcareservices2024@gmail.com', 
+    };
+
+    emailjs.send('service_1e0hvxh', 'template_cffx5iv', templateParams, 'n8P6-ug-P3GdFfesN')
+      .then(response => {
+        console.log('SUCCESS!', response.status, response.text);
+        alert('Message sent successfully!');
+      })
+      .catch(error => {
+        console.log('FAILED...', error);
+        alert('Failed to send message. Please try again.');
+      });
+  }
+
   function handleSubmit(e) {
     e.preventDefault();
     const validationErrors = validateValues();
     setErrors(validationErrors);
     if (Object.keys(validationErrors).length === 0) {
       setIsSubmitted(true);
+           sendEmail(); 
     }
   }
   return (
@@ -67,7 +87,7 @@ const Contactus = () => {
             <div>
               <label htmlFor='name'>Name</label>
               <br />
-              <input id='name' className='input'   type='text' value={username} onChange={function (event) {
+              <input id='name' className='input' name="username"   type='text' value={username} onChange={function (event) {
                 handleChange(event, setUsername);
               }} />
               {errors.username && <span className='error'>{errors.username}</span>}
@@ -76,7 +96,7 @@ const Contactus = () => {
             <div>
               <label htmlFor='email'>Email</label>
               <br />
-              <input id='email' type='email' value={email} onChange={function (event) {
+              <input id='email' type='email' name="email" value={email} onChange={function (event) {
                 handleChange(event, setEmail)
               }} />
               {errors.email && <span className='error'>{errors.email}</span>}
@@ -85,14 +105,14 @@ const Contactus = () => {
             <div>
               <label htmlFor='message'>Message</label>
               <br />
-              <input id='message1' type='message' value={message} onChange={function (event) {
+              <input id='message1' type='message'  name="message" value={message} onChange={function (event) {
                 handleChange(event, setMessage)
               }} />
               {errors.message && <span className='error'>{errors.message}</span>}
             </div>
 
             <br />
-            <button onSubmit={handleSubmit} id='button1'>Send Message</button>
+            <button type='submit' id='button1'>Send Message</button>
           </form>
         </div>
       </div>

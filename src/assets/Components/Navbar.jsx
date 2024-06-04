@@ -1,7 +1,18 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import { useNavigate } from "react-router-dom";
+import { useAuthContext } from '../../User-authentication/AuthContext';
+import { removeToken } from '../../User-authentication/Helpers';
 
 const Navbar = () => {
+
+  const { user } = useAuthContext();
+  const navigate = useNavigate();
+
+  const handleLogout = () => {
+    removeToken();
+    navigate("/PatientRegistration", { replace: true });
+  };
   return (
     <div>
       <div className='navigation'>
@@ -25,7 +36,7 @@ const Navbar = () => {
 
       <div className='nav-bar'>
       <ul>
-      <Link to="/Home" className='link'> <li>Home</li></Link>
+      <Link to="/" className='link'> <li>Home</li></Link>
       <Link to="/Findadoctor" className='link'> <li>Find a Doctor</li></Link>
       <Link to="/Pharmacy" className='link'>  <li>Phamarcy</li></Link>
       <Link to="/Resources" className='link'> <li>Resources</li></Link>
