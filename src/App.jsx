@@ -37,17 +37,6 @@ const App = () => {
           <Route path='/Contactus' element={<Contactus />} />
           <Route path='/Profile' element={<Profile />} />
           <Route path='/Findadoctor' element={<Findadoctor />} />
-
-          <Route
-            path="/Bookappointment"
-            element={getToken() ? <Bookappointment /> : <Navigate to="/PatientRegistration" />}
-          />
-
-          <Route
-            path="/ScheduleCall"
-            element={getToken() ? <ScheduleCall /> : <Navigate to="/PatientRegistration" />}
-          />
-
         </Routes>
       </BrowserRouter>
     </div>
@@ -55,3 +44,14 @@ const App = () => {
 }
 
 export default App
+
+
+// <Route
+// path="/Bookappointment"
+// element={getToken() ? <Bookappointment /> : <Navigate to="/PatientRegistration" />}
+// />
+// <Route
+// path="/ScheduleCall"
+// element={getToken() ? <ScheduleCall /> : <Navigate to="/PatientRegistration" />}
+// />
+
