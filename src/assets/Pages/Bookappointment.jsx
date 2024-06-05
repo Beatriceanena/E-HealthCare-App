@@ -1,4 +1,4 @@
-import React, { useState,useContext } from 'react';
+import React, { useState,useContext,useEffect } from 'react';
 import Navbar from '../Components/Navbar';
 import Footer from '../Components/Footer';
 import emailjs from 'emailjs-com';
@@ -8,9 +8,12 @@ import { useNavigate } from 'react-router-dom';
 const Bookappointment = () => {
   const {user}= useAuthContext()
   const navigate=useNavigate()
-  if (!user){
-    navigate('/Login')
-  }
+  
+  useEffect(() => {
+    if (!user) {
+      navigate('/Login');
+    }
+  }, [user, navigate]);
 
   const [formData, setFormData] = useState({
     patientName: '',

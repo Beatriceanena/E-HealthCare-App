@@ -35,7 +35,6 @@ const App = () => {
           <Route path='/ScheduleCall' element={<ScheduleCall />} />
           <Route path='/Resources' element={<Resources />} />
           <Route path='/Contactus' element={<Contactus />} />
-          <Route path='/Profile' element={<Profile />} />
           <Route path='/Findadoctor' element={<Findadoctor />} />
         </Routes>
       </BrowserRouter>

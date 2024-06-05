@@ -1,4 +1,4 @@
-import React, { useState,useContext } from 'react';
+import React, { useState,useContext,useEffect } from 'react';
 import Navbar from '../Components/Navbar'
 import { Link } from 'react-router-dom'
 import Footer from '../Components/Footer'
@@ -8,9 +8,13 @@ import { useNavigate } from 'react-router-dom';
 function ScheduleCall() {
   const {user}= useAuthContext()
   const navigate=useNavigate()
-  if (!user){
-    navigate('/Login')
-  }
+  
+  useEffect(() => {
+    if (!user) {
+      navigate('/Login');
+    }
+  }, [user, navigate]);
+  
   return (
     <div>
       <Navbar />
