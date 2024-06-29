@@ -76,7 +76,7 @@ function Findadoctor() {
                         <li>Administer medication at clinic and at the comfort of your home</li>
                     </ol>
 
-                    <Link to="/Bookappointment">
+                    <Link to="/Bookappointment" target="_blank">
                     <button id='cart-btn2' >Book appointment</button>
                     </Link>
                 </div>

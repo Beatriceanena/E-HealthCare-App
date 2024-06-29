@@ -24,7 +24,7 @@ function ScheduleCall() {
           <img src="\src\assets\Images\doctor.jpeg" alt="Doctor" />
         </div>
         <div className='hero-details'>
-          <h2>Would you like to schedule a call with your doctor?</h2>
+          <h2 id='schedulecall'>Would you like to schedule a call with your doctor?</h2>
           <p>Dont worry, we have got you covered. With our 24hour services available. we are sure to get you in touch with an available Doctor in your time of need.</p>
           <div className='button'>
           <Link to="https://workspace.google.com/products/meet/">

@@ -105,7 +105,7 @@ const Contactus = () => {
             <div>
               <label htmlFor='message'>Message</label>
               <br />
-              <input id='message1' type='message'  name="message" value={message} onChange={function (event) {
+              <input id='message3' type='message'  name="message" value={message} onChange={function (event) {
                 handleChange(event, setMessage)
               }} />
               {errors.message && <span className='error'>{errors.message}</span>}

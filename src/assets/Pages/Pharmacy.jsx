@@ -54,7 +54,8 @@ const Pharmacy = () => {
             <div className='cart-container'>
                 <div className='categories'>
                     <div className='category'>
-                        <h2> Reviews</h2>
+                        <h2> Purchase Item</h2>
+                        <p>Make payments via Mobile Money</p>
                     </div>
                 </div>
                 <div className='product-section'>

@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 const productdetail = (props) => {
   return (
@@ -10,23 +11,25 @@ const productdetail = (props) => {
     <div className='product-description'>
     <div className='detail'>
         <h3>Drug Name:</h3>
-        <p>{props.title}</p>
+        <p id='details'>{props.title}</p>
     </div>
 
     <div className='detail'>
         <h3>Price:</h3>
-        <p>UGX {props.price}</p>
+        <p id='details'>UGX {props.price}</p>
     </div>
 
     <div className='detail'>
         <h3>Status:</h3>
-        <p>{props.status}</p>
+        <p id='details'>{props.status}</p>
     </div>
 
     <hr />
     <h2>Description</h2>
     <p>{props.description}</p>
-    <button id='cart-btn2' >Add to Cart</button>
+    <Link to="/Contactus">
+    <button id='cart-btn2' >Buy Now</button>
+    </Link>
 </div>
     </div>
   )

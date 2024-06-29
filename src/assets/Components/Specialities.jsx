@@ -6,7 +6,7 @@ const Specialities = (props) => {
     <div className='image'>
     <img src={props.image}/>
     </div>
-    <h4>{props.title}</h4>
+    <h4 id='speciality-title'>{props.title}</h4>
     </div>
   )
 }

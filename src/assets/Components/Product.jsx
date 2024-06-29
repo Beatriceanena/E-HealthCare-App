@@ -17,7 +17,9 @@ const Product = (props) => {
           </Link>
           </div>
           <div className="in-stock-banner">{props.status}</div>
-          <button id='cart-btn'>Add to Cart</button>
+          <Link to="/Contactus">
+          <button id='cart-btn'>Buy Now</button>
+          </Link>
         </div>
       </div>
     </div>

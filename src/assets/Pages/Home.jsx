@@ -63,10 +63,10 @@ const Home=() => {
           </div>
           <div className='hero-details'>
 
-            <h2>About Us</h2>
+            <h2 id='hero-heading'>About Us</h2>
             <p> At E-HealthCare, we believe in leveraging cutting-edge technology to provide accessible, convenient, and personalized healthcare solutions tailored to your unique needs.Our platform offers a wide range of services, including telemedicine consultations, health tracking tools, virtual consultation and much more. </p>
             <div className='button'>
-              <Link to="/ScheduleCall">
+              <Link to="/Contactus" target="_blank">
               <button id='cart-btn2' >Contact Us</button>
             </Link>
             </div>
